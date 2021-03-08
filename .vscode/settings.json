@@ -1,0 +1,7 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.associations": {
+        "**/pages/**/*.js": "javascriptreact",
+        "**/components/**/*.js": "javascriptreact"
+    },
+}

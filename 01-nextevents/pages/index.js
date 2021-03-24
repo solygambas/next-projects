@@ -14,7 +14,6 @@ function HomePage(props) {
           content="Find a lot of great events that allow you to grow as a developer"
         />
       </Head>
-      <p>Test</p>
       <NewsletterRegistration />
       <EventList items={props.events} />
     </div>

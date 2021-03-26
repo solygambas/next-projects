@@ -1,8 +1,9 @@
 # NextJS Projects
 
-This repo is made of 1 project:
+This repo is made of 2 project:
 
 1. [**NextEvents**](#nextevents): ...
+2. [**Blog**](#blog): ...
 
 ## <a name="nextevents"></a>1) NextEvents
 
@@ -12,6 +13,20 @@ This repo is made of 1 project:
 
 <p align="center">
     <img src="01-nextevents/screenshot.png">
+</p>
+
+### Features
+
+- ...
+
+## <a name="blog"></a>2) Blog
+
+...
+
+[See 02-blog folder](https://github.com/solygambas/next-course/tree/master/02-blog)
+
+<p align="center">
+    <img src="02-blog/screenshot.png">
 </p>
 
 ### Features

@@ -1,6 +1,6 @@
 # NextJS Projects
 
-This repo is made of 2 project:
+This repo is made of 2 projects:
 
 1. [**NextEvents**](#nextevents): ...
 2. [**Blog**](#blog): ...

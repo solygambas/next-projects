@@ -2,6 +2,8 @@
 
 ...
 
+[See Demo deployed on Vercel](https://nextevents.vercel.app/)
+
 <p align="center">
     <img src="screenshot.png">
 </p>

@@ -9,6 +9,8 @@ This repo is made of 2 projects:
 
 ...
 
+[See Demo deployed on Vercel](https://nextevents.vercel.app/)
+
 [See 01-nextevents folder](https://github.com/solygambas/next-course/tree/master/01-nextevents)
 
 <p align="center">
@@ -22,6 +24,8 @@ This repo is made of 2 projects:
 ## <a name="blog"></a>2) Blog
 
 ...
+
+[See Demo deployed on Vercel](https://next-dagny.vercel.app/)
 
 [See 02-blog folder](https://github.com/solygambas/next-course/tree/master/02-blog)
 

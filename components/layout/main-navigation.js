@@ -1,24 +1,28 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import classes from "./main-navigation.module.css";
-import Logo from "./logo";
+import classes from './main-navigation.module.css';
 
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <Link href="/">
+      <Link href='/'>
         <a>
-          <Logo />
+          <div className={classes.logo}>Next Auth</div>
         </a>
       </Link>
-      <ul>
-        <li>
-          <Link href="/posts">Posts</Link>
-        </li>
-        <li>
-          <Link href="/contact">Contact</Link>
-        </li>
-      </ul>
+      <nav>
+        <ul>
+          <li>
+            <Link href='/auth'>Login</Link>
+          </li>
+          <li>
+            <Link href='/profile'>Profile</Link>
+          </li>
+          <li>
+            <button>Logout</button>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

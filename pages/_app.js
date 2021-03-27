@@ -1,16 +1,19 @@
 import Head from "next/head";
+import { Provider } from "next-auth/client";
 
 import Layout from "../components/layout/layout";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Head>
-        <title>NextAuth</title>
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider session={pageProps.session}>
+      <Layout>
+        <Head>
+          <title>NextAuth</title>
+        </Head>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 

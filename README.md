@@ -12,10 +12,12 @@ This repo is made of 3 projects:
 
 [See Demo deployed on Vercel](https://nextevents.vercel.app/)
 
-[See 01-nextevents folder](https://github.com/solygambas/next-course/tree/master/01-nextevents)
+[See 01-nextevents folder](https://github.com/solygambas/next-course/tree/main/01-nextevents)
 
 <p align="center">
-    <img src="01-nextevents/screenshot.png">
+    <a href="https://github.com/solygambas/next-course/tree/main/01-nextevents">
+        <img src="01-nextevents/screenshot.png">
+    </a>
 </p>
 
 ### Features
@@ -28,10 +30,12 @@ This repo is made of 3 projects:
 
 [See Demo deployed on Vercel](https://next-dagny.vercel.app/)
 
-[See 02-blog folder](https://github.com/solygambas/next-course/tree/master/02-blog)
+[See 02-blog folder](https://github.com/solygambas/next-course/tree/main/02-blog)
 
 <p align="center">
-    <img src="02-blog/screenshot.png">
+    <a href="https://github.com/solygambas/next-course/tree/main/02-blog">
+        <img src="02-blog/screenshot.png">
+    </a>
 </p>
 
 ### Features
@@ -42,10 +46,12 @@ This repo is made of 3 projects:
 
 ...
 
-[See 03-dashboard folder](https://github.com/solygambas/next-course/tree/master/03-dashboard)
+[See 03-dashboard folder](https://github.com/solygambas/next-course/tree/main/03-dashboard)
 
 <p align="center">
-    <img src="03-dashboard/screenshot.png">
+    <a href="https://github.com/solygambas/next-course/tree/main/03-dashboard">
+        <img src="03-dashboard/screenshot.png">
+    </a>
 </p>
 
 ### Features

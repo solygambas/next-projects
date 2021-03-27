@@ -1,9 +1,10 @@
 # NextJS Projects
 
-This repo is made of 2 projects:
+This repo is made of 3 projects:
 
 1. [**NextEvents**](#nextevents): ...
 2. [**Blog**](#blog): ...
+3. [**Dashboard**](#dashboard): ...
 
 ## <a name="nextevents"></a>1) NextEvents
 
@@ -31,6 +32,20 @@ This repo is made of 2 projects:
 
 <p align="center">
     <img src="02-blog/screenshot.png">
+</p>
+
+### Features
+
+- ...
+
+## <a name="dashboard"></a>3) Dashboard
+
+...
+
+[See 03-dashboard folder](https://github.com/solygambas/next-course/tree/master/03-dashboard)
+
+<p align="center">
+    <img src="03-dashboard/screenshot.png">
 </p>
 
 ### Features

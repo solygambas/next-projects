@@ -1,10 +1,11 @@
 # NextJS Projects
 
-This repo is made of 3 projects:
+This repo is made of 4 projects:
 
 1. [**NextEvents**](#nextevents): ...
 2. [**Blog**](#blog): ...
 3. [**Dashboard**](#dashboard): ...
+4. [**React Meetups**](#reactmeetups): ...
 
 ## <a name="nextevents"></a>1) NextEvents
 
@@ -51,6 +52,24 @@ This repo is made of 3 projects:
 <p align="center">
     <a href="https://github.com/solygambas/next-course/tree/main/03-dashboard">
         <img src="03-dashboard/screenshot.png">
+    </a>
+</p>
+
+### Features
+
+- ...
+
+## <a name="reactmeetups"></a>4) React Meetups
+
+...
+
+[See Demo deployed on Vercel](#)
+
+[See 04-reactmeetups folder](https://github.com/solygambas/next-course/tree/main/04-reactmeetups)
+
+<p align="center">
+    <a href="https://github.com/solygambas/next-course/tree/main/04-reactmeetups">
+        <img src="04-reactmeetups/screenshot.png">
     </a>
 </p>
 

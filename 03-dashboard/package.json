@@ -1,7 +1,18 @@
 {
-  "name": "nextjs-course",
-  "version": "0.1.0",
-  "private": true,
+  "name": "next-dashboard",
+  "productName": "Dashboard",
+  "version": "1.0.0",
+  "description": "A very simple dashboard to understand authentication with NextAuth.js.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solygambas/next-projects.git"
+  },
+  "author": "solygambas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solygambas/next-projects/issues"
+  },
+  "homepage": "https://github.com/solygambas/next-projects#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

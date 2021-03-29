@@ -1,7 +1,18 @@
 {
-  "name": "nextjs-course",
-  "version": "0.1.0",
-  "private": true,
+  "name": "next-events",
+  "productName": "NextEvents",
+  "version": "1.0.0",
+  "description": "A social networking site using Next.js, MongoDB and Firebase.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solygambas/next-projects.git"
+  },
+  "author": "solygambas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solygambas/next-projects/issues"
+  },
+  "homepage": "https://github.com/solygambas/next-projects#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

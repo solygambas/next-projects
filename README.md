@@ -2,14 +2,14 @@
 
 This repo is made of 4 projects:
 
-1. [**NextEvents**](#nextevents): ...
-2. [**Blog**](#blog): ...
-3. [**Dashboard**](#dashboard): ...
-4. [**React Meetups**](#reactmeetups): ...
+1. [**NextEvents**](#nextevents): A social networking site using Next.js, MongoDB and Firebase.
+2. [**Blog**](#blog): A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
+3. [**Dashboard**](#dashboard): A very simple dashboard to understand authentication with NextAuth.js.
+4. [**React Meetups**](#reactmeetups): Another social networking site to summarize Next.js core concepts.
 
 ## <a name="nextevents"></a>1) NextEvents
 
-...
+A social networking site using Next.js, MongoDB and Firebase.
 
 [See Demo deployed on Vercel](https://nextevents.vercel.app/)
 
@@ -27,7 +27,7 @@ This repo is made of 4 projects:
 
 ## <a name="blog"></a>2) Blog
 
-...
+A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
 
 [See Demo deployed on Vercel](https://next-dagny.vercel.app/)
 
@@ -45,7 +45,7 @@ This repo is made of 4 projects:
 
 ## <a name="dashboard"></a>3) Dashboard
 
-...
+A very simple dashboard to understand authentication with NextAuth.js.
 
 [See 03-dashboard folder](https://github.com/solygambas/next-course/tree/main/03-dashboard)
 
@@ -61,9 +61,7 @@ This repo is made of 4 projects:
 
 ## <a name="reactmeetups"></a>4) React Meetups
 
-...
-
-[See Demo deployed on Vercel](#)
+Another social networking site to summarize Next.js core concepts.
 
 [See 04-reactmeetups folder](https://github.com/solygambas/next-course/tree/main/04-reactmeetups)
 
@@ -75,6 +73,10 @@ This repo is made of 4 projects:
 
 ### Features
 
-- ...
+- converting a React project into a Next.js app.
+- handling server-side rendering of pages with getStaticProps and getStaticPaths.
+- connecting and querying a MongoDB Database via an API route.
+- getting data from the database for page pre-rendering.
+- working with fallback pages and revalidation to display new meetups without having to rebuild.
 
 Based on [NextJS & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).

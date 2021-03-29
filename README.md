@@ -23,7 +23,8 @@ A social networking site using Next.js, MongoDB and Firebase.
 
 ### Features
 
-- ...
+-
+- deploying on Vercel.
 
 ## <a name="blog"></a>2) Blog
 
@@ -41,7 +42,8 @@ A complete app example with a blog using Next.js, MongoDB, Markdown and React Sy
 
 ### Features
 
-- ...
+-
+- deploying on Vercel.
 
 ## <a name="dashboard"></a>3) Dashboard
 
@@ -57,7 +59,13 @@ A very simple dashboard to understand authentication with NextAuth.js.
 
 ### Features
 
-- ...
+- adding a user signup API route and sending signup requests from the frontend.
+- hashing passwords with Bcryptjs.
+- working with a custom auth provider in NextAuth.js to log in users.
+- managing active sessions and handling logouts.
+- protecting routes with client-side and server-side page guards.
+- protecting API routes.
+- enabling users to change their passwords.
 
 ## <a name="reactmeetups"></a>4) React Meetups
 

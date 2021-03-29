@@ -1,3 +1,3 @@
-# NextJS Projects
+# Next.js Projects
 
-Based on [NextJS & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).
+Based on [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).

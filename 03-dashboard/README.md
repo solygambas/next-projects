@@ -16,4 +16,4 @@ A very simple dashboard to understand authentication with NextAuth.js.
 - protecting API routes.
 - enabling users to change their passwords.
 
-Based on [NextJS & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).
+Based on [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).

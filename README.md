@@ -53,9 +53,9 @@ A complete app example with a blog using Next.js, MongoDB, Markdown and React Sy
 
 ### Features
 
-- building the home page, creating a general layout and a reusable grid to display latest posts.
+- building the home page, creating a general layout and a reusable grid to display the latest posts.
 - reading markdown files and rendering posts as JSX with gray-matter and react-markdown.
-- displaying dynamic post pages and paths.
+- displaying dynamic post pages and generating paths.
 - optimizing images from markdown with Image.
 - rendering code snippets from markdown and optimizing React Syntax Highlighter bundle size.
 - handling messages sent by users via an API route.

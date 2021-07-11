@@ -1,11 +1,12 @@
 # Next.js Projects
 
-This repo is made of 4 projects:
+This repo is made of 5 projects:
 
 1. [**NextEvents**](#nextevents): A social networking site using Next.js, MongoDB and Firebase.
 2. [**Blog**](#blog): A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
 3. [**Dashboard**](#dashboard): A very simple dashboard to understand authentication with NextAuth.js.
 4. [**React Meetups**](#reactmeetups): Another social networking site to summarize Next.js core concepts.
+5. [**DJ Events**](#djevents): A music event website using Strapi CMS as backend.
 
 ## <a name="nextevents"></a>1) NextEvents
 
@@ -106,4 +107,20 @@ Another social networking site to summarize Next.js core concepts.
 - getting data from the database for page pre-rendering.
 - working with fallback pages and revalidation to display new meetups without having to rebuild.
 
-Based on [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021).
+## <a name="djevents"></a>5) DJ Events
+
+A music event website using Strapi CMS as backend.
+
+[See 05-djevents folder](https://github.com/solygambas/next-course/tree/main/05-djevents)
+
+<!-- <p align="center">
+    <a href="https://github.com/solygambas/next-course/tree/main/05-djevents">
+        <img src="05-djevents/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
+-
+
+Based on [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller and [Next.js Dev to Deployment](https://www.udemy.com/course/nextjs-dev-to-deployment/) by Brad Traversy (2021).

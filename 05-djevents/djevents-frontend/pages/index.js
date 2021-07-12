@@ -20,6 +20,7 @@ export default function HomePage({ events }) {
   );
 }
 
+// at build time
 export async function getStaticProps() {
   const res = await fetch(`${API_URL}/api/events`);
   const events = await res.json();
@@ -28,3 +29,12 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
+
+// on every request
+// export async function getServerSideProps() {
+//   const res = await fetch(`${API_URL}/api/events`);
+//   const events = await res.json();
+//   return {
+//     props: { events: events.slice(0, 3) },
+//   };
+// }

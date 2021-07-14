@@ -8,7 +8,9 @@ export default function EventItem({ singleEvent }) {
       <div className={styles.img}>
         <Image
           src={
-            singleEvent.image ? singleEvent.image : "/images/event-default.png"
+            singleEvent.image
+              ? singleEvent.image.formats.thumbnail.url
+              : "/images/event-default.png"
           }
           width={170}
           height={100}
@@ -16,7 +18,8 @@ export default function EventItem({ singleEvent }) {
       </div>
       <div className={styles.info}>
         <span>
-          {singleEvent.date} at {singleEvent.time}
+          {new Date(singleEvent.date).toLocaleDateString("en-US")} at{" "}
+          {singleEvent.time}
         </span>
         <h3>{singleEvent.name}</h3>
       </div>

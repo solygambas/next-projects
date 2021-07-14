@@ -23,12 +23,17 @@ export default function EventPage({ singleEvent }) {
           </a>
         </div>
         <span>
-          {singleEvent.date} at {singleEvent.time}
+          {new Date(singleEvent.date).toLocaleDateString("en-US")} at{" "}
+          {singleEvent.time}
         </span>
         <h1>{singleEvent.name}</h1>
         {singleEvent.image && (
           <div className={styles.image}>
-            <Image src={singleEvent.image} width={960} height={600} />
+            <Image
+              src={singleEvent.image.formats.medium.url}
+              width={960}
+              height={600}
+            />
           </div>
         )}
         <h3>Performers:</h3>
@@ -47,7 +52,7 @@ export default function EventPage({ singleEvent }) {
 
 // at build time
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/events/`);
+  const res = await fetch(`${API_URL}/events/`);
   const events = await res.json();
   const paths = events.map((singleEvent) => ({
     params: { slug: singleEvent.slug },
@@ -56,7 +61,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const res = await fetch(`${API_URL}/api/events/${slug}`);
+  const res = await fetch(`${API_URL}/events?slug=${slug}`);
   const events = await res.json();
   return {
     props: {
@@ -68,7 +73,7 @@ export async function getStaticProps({ params: { slug } }) {
 
 // on every request
 // export async function getServerSideProps({ query: { slug } }) {
-//   const res = await fetch(`${API_URL}/api/events/${slug}`);
+//   const res = await fetch(`${API_URL}/events/${slug}`);
 //   const events = await res.json();
 //   return {
 //     props: {

@@ -10,6 +10,7 @@ import { FaImage } from "react-icons/fa";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
+import Modal from "@/components/Modal";
 
 export default function EditEventPage({ singleEvent }) {
   const router = useRouter();
@@ -25,6 +26,7 @@ export default function EditEventPage({ singleEvent }) {
   const [imagePreview, setImagePreview] = useState(
     singleEvent.image ? singleEvent.image.formats.thumbnail.url : null
   );
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -147,9 +149,12 @@ export default function EditEventPage({ singleEvent }) {
         </div>
       )}
       <div>
-        <button className="btn-secondary">
+        <button className="btn-secondary" onClick={() => setShowModal(true)}>
           <FaImage /> Upload Image
         </button>
+        <Modal show={showModal} onClose={() => setShowModal(false)}>
+          Image Upload
+        </Modal>
       </div>
     </Layout>
   );

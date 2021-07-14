@@ -1,0 +1,32 @@
+.modal {
+  background: white;
+  width: 500px;
+  max-width: 90vw;
+  height: 600px;
+  max-height: 90vh;
+  border-radius: 15px;
+  padding: 20px;
+  z-index: 100;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+}
+
+.body {
+  padding-top: 10px;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}

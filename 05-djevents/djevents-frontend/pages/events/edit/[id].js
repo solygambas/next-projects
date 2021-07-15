@@ -11,6 +11,7 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
 import Modal from "@/components/Modal";
+import ImageUpload from "../../../components/ImageUpload";
 
 export default function EditEventPage({ singleEvent }) {
   const router = useRouter();
@@ -55,6 +56,13 @@ export default function EditEventPage({ singleEvent }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/events/${singleEvent.id}`);
+    const data = await res.json();
+    setImagePreview(data.image.formats.thumbnail.url);
+    setShowModal(false);
   };
 
   return (
@@ -153,7 +161,7 @@ export default function EditEventPage({ singleEvent }) {
           <FaImage /> Upload Image
         </button>
         <Modal show={showModal} onClose={() => setShowModal(false)}>
-          Image Upload
+          <ImageUpload eventId={singleEvent.id} imageUploaded={imageUploaded} />
         </Modal>
       </div>
     </Layout>

@@ -24,6 +24,10 @@ export default function RegisterPage() {
     register({ email, username, password });
   };
 
+  useEffect(() => {
+    error && toast.error(error);
+  });
+
   return (
     <Layout title="User Registration">
       <div className={styles.auth}>
@@ -68,7 +72,7 @@ export default function RegisterPage() {
               onChange={(e) => setPasswordConfirm(e.target.value)}
             />
           </div>
-          <input type="submit" value="Submit" className="btn" />
+          <input type="submit" value="Register" className="btn" />
         </form>
         <p>
           Already have an account? <Link href="/account/login">Login</Link>

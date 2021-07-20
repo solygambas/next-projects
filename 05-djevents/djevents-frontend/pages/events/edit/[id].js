@@ -7,13 +7,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaImage } from "react-icons/fa";
 
+import { parseCookies } from "@/helpers/index";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
 import Modal from "@/components/Modal";
 import ImageUpload from "../../../components/ImageUpload";
 
-export default function EditEventPage({ singleEvent }) {
+export default function EditEventPage({ singleEvent, token }) {
   const router = useRouter();
   const [values, setValues] = useState({
     name: singleEvent.name,
@@ -42,10 +43,15 @@ export default function EditEventPage({ singleEvent }) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
     if (!res.ok) {
+      if (res.status === 403 || res.status === 401) {
+        toast.error("No token included");
+        return;
+      }
       toast.error("Something went wrong");
     } else {
       const createdEvent = await res.json();
@@ -161,7 +167,11 @@ export default function EditEventPage({ singleEvent }) {
           <FaImage /> Upload Image
         </button>
         <Modal show={showModal} onClose={() => setShowModal(false)}>
-          <ImageUpload eventId={singleEvent.id} imageUploaded={imageUploaded} />
+          <ImageUpload
+            eventId={singleEvent.id}
+            imageUploaded={imageUploaded}
+            token={token}
+          />
         </Modal>
       </div>
     </Layout>
@@ -171,5 +181,6 @@ export default function EditEventPage({ singleEvent }) {
 export async function getServerSideProps({ params: { id }, req }) {
   const res = await fetch(`${API_URL}/events/${id}`);
   const singleEvent = await res.json();
-  return { props: { singleEvent } };
+  const { token } = parseCookies(req);
+  return { props: { singleEvent, token } };
 }

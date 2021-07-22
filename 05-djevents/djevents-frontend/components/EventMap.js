@@ -2,9 +2,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import Geocode from "react-geocode";
-
-Geocode.setApiKey(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
 
 export default function EventMap({ singleEvent }) {
   const [latitude, setLatitude] = useState(null);
@@ -19,23 +16,33 @@ export default function EventMap({ singleEvent }) {
   });
 
   useEffect(() => {
-    Geocode.fromAddress(singleEvent.address).then(
-      (response) => {
-        const { lat, lng } = response.results[0].geometry.location;
+    const getGeocodeFromAddress = async () => {
+      const res = await fetch(
+        `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.NEXT_PUBLIC_MAPQUEST_API_KEY}&location=${singleEvent.address}`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        const { lat, lng } = data.results[0].locations[0].displayLatLng;
         setLatitude(lat);
         setLongitude(lng);
         setViewport({ ...viewport, latitude: lat, longitude: lng });
         setLoading(false);
-      },
-      (error) => {
-        console.error(error);
       }
-    );
+    };
+    getGeocodeFromAddress();
   }, []);
-
-  console.log(latitude, longitude);
 
   if (loading) return false;
 
-  return <div>MAP</div>;
+  return (
+    <ReactMapGL
+      {...viewport}
+      mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
+      onViewportChange={(vp) => setViewport(vp)}
+    >
+      <Marker key={singleEvent.id} latitude={latitude} longitude={longitude}>
+        <Image src="/images/pin.svg" width={30} height={30} />
+      </Marker>
+    </ReactMapGL>
+  );
 }

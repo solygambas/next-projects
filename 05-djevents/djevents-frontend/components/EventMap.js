@@ -41,7 +41,7 @@ export default function EventMap({ singleEvent }) {
       onViewportChange={(vp) => setViewport(vp)}
     >
       <Marker key={singleEvent.id} latitude={latitude} longitude={longitude}>
-        <Image src="/images/pin.svg" width={30} height={30} />
+        <Image src="/images/pin.svg" width={30} height={30} alt="" />
       </Marker>
     </ReactMapGL>
   );

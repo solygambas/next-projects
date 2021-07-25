@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Layout title="DevSpace">
+    <Layout>
       <h1>Hello World</h1>
     </Layout>
   );

@@ -2,9 +2,11 @@
 
 A music event website using Strapi CMS as backend.
 
-<!-- <p align="center">
+[See Demo deployed on Vercel](https://next-djevents-strapi.vercel.app/)
+
+<p align="center">
     <img src="screenshot.png">
-</p> -->
+</p>
 
 ## Features
 

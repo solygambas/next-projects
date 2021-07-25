@@ -144,7 +144,7 @@ A music event website using Strapi CMS as backend.
 - deploying Strapi backend on [Heroku](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/deployment/hosting-guides/heroku.html).
 - deploying frontend on Vercel.
 
-## {#devspace} 6) DevSpace
+## 6) DevSpace {#devspace}
 
 Another blog using Tailwind CSS and Markdown.
 

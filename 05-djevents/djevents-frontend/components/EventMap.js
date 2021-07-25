@@ -18,7 +18,7 @@ export default function EventMap({ singleEvent }) {
   useEffect(() => {
     const getGeocodeFromAddress = async () => {
       const res = await fetch(
-        `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.NEXT_PUBLIC_MAPQUEST_API_KEY}&location=${singleEvent.address}`
+        `https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.NEXT_PUBLIC_MAPQUEST_API_KEY}&location=${singleEvent.address}`
       );
       if (res.ok) {
         const data = await res.json();

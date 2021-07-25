@@ -21,7 +21,7 @@ A music event website using Strapi CMS as backend.
 - adding, editing and deleting event.
 - creating a slug and displaying user-friendly messages with React Toastify.
 - handling image upload with a modal using React Portal.
-- authenticating users, storing JWT in server HttpOnly cookie.
+- authenticating users, storing JWT token in server HttpOnly cookie.
 - registering users and creating an auth context.
 - protecting Strapi API routes and customizing user events endpoint.
 - creating a user dashboard and associating events with users.

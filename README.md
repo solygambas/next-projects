@@ -9,7 +9,7 @@ This repo is made of 6 projects:
 5. [**DJ Events**](#djevents): A music event website using Strapi CMS as backend.
 6. [**DevSpace**](#devspace): Another blog using Tailwind CSS and Markdown.
 
-## {#nextevents} 1) NextEvents
+## <a name="nextevents"></a> 1) NextEvents
 
 A social networking site using Next.js, MongoDB and Firebase.
 
@@ -39,7 +39,7 @@ A social networking site using Next.js, MongoDB and Firebase.
 - handling errors and displaying user-friendly notifications.
 - deploying on Vercel.
 
-## {#blog} 2) Blog
+## <a name="blog"></a> 2) Blog
 
 A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
 
@@ -66,7 +66,7 @@ A complete app example with a blog using Next.js, MongoDB, Markdown and React Sy
 - using React portals to show user-friendly notifications.
 - deploying on Vercel.
 
-## {#dashboard} 3) Dashboard
+## <a name="dashboard"></a> 3) Dashboard
 
 A very simple dashboard to understand authentication with NextAuth.js.
 
@@ -88,7 +88,7 @@ A very simple dashboard to understand authentication with NextAuth.js.
 - protecting API routes.
 - enabling users to change their passwords.
 
-## {#reactmeetups} 4) React Meetups
+## <a name="reactmeetups"></a> 4) React Meetups
 
 Another social networking site to summarize Next.js core concepts.
 
@@ -108,7 +108,7 @@ Another social networking site to summarize Next.js core concepts.
 - getting data from the database for page pre-rendering.
 - working with fallback pages and revalidation to display new meetups without having to rebuild.
 
-## {#djevents} 5) DJ Events
+## <a name="djevents"></a> 5) DJ Events
 
 A music event website using Strapi CMS as backend.
 
@@ -144,7 +144,7 @@ A music event website using Strapi CMS as backend.
 - deploying Strapi backend on [Heroku](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/deployment/hosting-guides/heroku.html).
 - deploying frontend on Vercel.
 
-## 6) DevSpace {#devspace}
+## <a name="devspace"></a> 6) DevSpace
 
 Another blog using Tailwind CSS and Markdown.
 

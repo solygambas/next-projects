@@ -4,6 +4,8 @@ A music event website using Strapi CMS as backend.
 
 [See Demo deployed on Vercel](https://next-djevents-strapi.vercel.app/)
 
+[See Strapi API deployed on Heroku](https://djevents-strapi.herokuapp.com/events)
+
 <p align="center">
     <img src="../screenshot.png">
 </p>

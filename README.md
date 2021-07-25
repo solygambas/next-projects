@@ -158,7 +158,7 @@ Another blog using Tailwind CSS and Markdown.
 
 ### Features
 
--
+- setting up [Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs) with Next.js.
 
 This repository is based on 2 courses:
 

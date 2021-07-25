@@ -125,7 +125,23 @@ A music event website using Strapi CMS as backend.
 
 ### Features
 
--
+- creating a Next.js app with a custom layout.
+- handling module aliases with jsconfig.
+- fetching data with API routes, displaying events and event details.
+- setting up Strapi CMS and defining event content type.
+- hosting uploaded images on Cloudinary.
+- connecting to the Strapi API, filtering events, enabling search and pagination.
+- adding, editing and deleting event.
+- creating a slug and displaying user-friendly messages with React Toastify.
+- handling image upload with a modal using React Portal.
+- authenticating users, storing JWT in server HttpOnly cookie.
+- registering users and creating an auth context.
+- protecting Strapi API routes and customizing user events endpoint.
+- creating a user dashboard and associating events with users.
+- guarding routes to add, edit, delete event and upload image.
+- displaying maps with MapQuest Geocoding API, Mapbox and ReactMapGL.
+- deploying Strapi backend on [Heroku](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/deployment/hosting-guides/heroku.html).
+- deploying frontend on Vercel.
 
 This repository is based on 2 courses:
 

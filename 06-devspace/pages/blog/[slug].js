@@ -4,8 +4,8 @@ import matter from "gray-matter";
 
 import Link from "next/link";
 import marked from "marked";
-import Layout from "../../components/Layout";
-import CategoryLabel from "../../components/CategoryLabel";
+import Layout from "@/components/Layout";
+import CategoryLabel from "@/components/CategoryLabel";
 
 export default function PostPage({
   slug,

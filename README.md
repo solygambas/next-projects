@@ -159,6 +159,12 @@ Another blog using Tailwind CSS and Markdown.
 ### Features
 
 - setting up [Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs) with Next.js.
+- getting markdown files and parsing frontmatter with gray-matter.
+- displaying single blog posts with Marked.
+- handling pagination and creating category pages.
+- displaying a category sidebar.
+- handling searches with an API route.
+- [caching posts](https://medium.com/@matswainson/building-a-search-component-for-your-next-js-markdown-blog-9e75e0e7d210) on each commit with Husky.
 
 This repository is based on 2 courses:
 

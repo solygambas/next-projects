@@ -150,11 +150,11 @@ Another blog using Tailwind CSS and Markdown.
 
 [See 06-devspace folder](https://github.com/solygambas/next-course/tree/main/06-devspace)
 
-<!-- <p align="center">
+<p align="center">
     <a href="https://github.com/solygambas/next-course/tree/main/06-devspace">
         <img src="06-devspace/screenshot.png">
     </a>
-</p> -->
+</p>
 
 ### Features
 

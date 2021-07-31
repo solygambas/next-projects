@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd 06-devspace/ && npm run cache-posts && git add cache/data.js

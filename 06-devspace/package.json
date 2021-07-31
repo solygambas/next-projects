@@ -17,7 +17,9 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cache-posts": "node scripts/cache.js",
+    "prepare": "cd .. && husky install 06-devspace/.husky"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

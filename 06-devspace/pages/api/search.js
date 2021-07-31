@@ -6,7 +6,8 @@ import { connect } from "http2";
 export default function handler(req, res) {
   let posts;
   if (process.env.NODE_ENV === "production") {
-    // to do
+    // fetch from cache
+    posts = require("../../cache/data").posts;
   } else {
     const files = fs.readdirSync(path.join("posts"));
     posts = files.map((filename) => {

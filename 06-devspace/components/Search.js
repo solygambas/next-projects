@@ -6,6 +6,10 @@ export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
+  const closeSearch = () => {
+    setSearchTerm("");
+  };
+
   useEffect(() => {
     const getResults = async () => {
       if (searchTerm === "") {
@@ -37,7 +41,7 @@ export default function Search() {
           </form>
         </div>
       </div>
-      <SearchResults results={searchResults} />
+      <SearchResults results={searchResults} closeSearch={closeSearch} />
     </div>
   );
 }

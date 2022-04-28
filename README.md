@@ -1,13 +1,15 @@
 # Next.js Projects
 
-This repo is made of 6 projects:
+6 projects to understand Next.js core concepts.
 
-1. [**NextEvents**](#nextevents): A social networking site using Next.js, MongoDB and Firebase.
-2. [**Blog**](#blog): A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
-3. [**Dashboard**](#dashboard): A very simple dashboard to understand authentication with NextAuth.js.
-4. [**React Meetups**](#reactmeetups): Another social networking site to summarize Next.js core concepts.
-5. [**DJ Events**](#djevents): A music event website using Strapi CMS as backend.
-6. [**DevSpace**](#devspace): Another blog using Tailwind CSS and Markdown.
+| #   | Project                                                                                                   | Description                                                                         |
+| --- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 01  | [**NextEvents**](#nextevents)                         | A social networking site using Next.js, MongoDB and Firebase.                                                 |
+| 02  | [**Blog**](#blog)                         | A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.                              |
+| 03  | [**Dashboard**](#dashboard)               | A very simple dashboard to understand authentication with NextAuth.js.                    |
+| 04  | [**React Meetups**](#reactmeetups)                             | Another social networking site to summarize Next.js core concepts.    |
+| 05  | [**DJ Events**](#djevents)             | A music event website using Strapi CMS as backend.                  |
+| 06  | [**DevSpace**](#devspace)                 | Another blog using Tailwind CSS and Markdown. |
 
 ## <a name="nextevents"></a> 1) NextEvents
 

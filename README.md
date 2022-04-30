@@ -1,6 +1,6 @@
 # Next.js Projects
 
-6 projects to understand Next.js core concepts.
+6 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.
 
 | #   | Project                                                                                                   | Description                                                                         |
 | --- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |

@@ -2,14 +2,14 @@
 
 6 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.
 
-| #   | Project                                                                                                   | Description                                                                         |
-| --- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| 01  | [**NextEvents**](#nextevents)                         | A social networking site using Next.js, MongoDB and Firebase.                                                 |
-| 02  | [**Blog**](#blog)                         | A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.                              |
-| 03  | [**Dashboard**](#dashboard)               | A very simple dashboard to understand authentication with NextAuth.js.                    |
-| 04  | [**React Meetups**](#reactmeetups)                             | Another social networking site to summarize Next.js core concepts.    |
-| 05  | [**DJ Events**](#djevents)             | A music event website using Strapi CMS as backend.                  |
-| 06  | [**DevSpace**](#devspace)                 | Another blog using Tailwind CSS and Markdown. |
+| #   | Project                            | Description                                                                                       |
+| --- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 01  | [**NextEvents**](#nextevents)      | A social networking site using Next.js, MongoDB and Firebase.                                     |
+| 02  | [**Blog**](#blog)                  | A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter. |
+| 03  | [**Dashboard**](#dashboard)        | A very simple dashboard to understand authentication with NextAuth.js.                            |
+| 04  | [**React Meetups**](#reactmeetups) | Another social networking site to summarize Next.js core concepts.                                |
+| 05  | [**DJ Events**](#djevents)         | A music event website using Strapi CMS as backend.                                                |
+| 06  | [**DevSpace**](#devspace)          | Another blog using Tailwind CSS and Markdown.                                                     |
 
 ## <a name="nextevents"></a> 1) NextEvents
 
@@ -17,10 +17,10 @@ A social networking site using Next.js, MongoDB and Firebase.
 
 [See Demo deployed on Vercel](https://nextevents.vercel.app/)
 
-[See 01-nextevents folder](https://github.com/solygambas/next-course/tree/main/01-nextevents)
+[See 01-nextevents folder](01-nextevents)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/01-nextevents">
+    <a href="01-nextevents">
         <img src="01-nextevents/screenshot.png">
     </a>
 </p>
@@ -47,10 +47,10 @@ A complete app example with a blog using Next.js, MongoDB, Markdown and React Sy
 
 [See Demo deployed on Vercel](https://next-dagny.vercel.app/)
 
-[See 02-blog folder](https://github.com/solygambas/next-course/tree/main/02-blog)
+[See 02-blog folder](02-blog)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/02-blog">
+    <a href="02-blog">
         <img src="02-blog/screenshot.png">
     </a>
 </p>
@@ -72,10 +72,10 @@ A complete app example with a blog using Next.js, MongoDB, Markdown and React Sy
 
 A very simple dashboard to understand authentication with NextAuth.js.
 
-[See 03-dashboard folder](https://github.com/solygambas/next-course/tree/main/03-dashboard)
+[See 03-dashboard folder](03-dashboard)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/03-dashboard">
+    <a href="03-dashboard">
         <img src="03-dashboard/screenshot.png">
     </a>
 </p>
@@ -94,10 +94,10 @@ A very simple dashboard to understand authentication with NextAuth.js.
 
 Another social networking site to summarize Next.js core concepts.
 
-[See 04-reactmeetups folder](https://github.com/solygambas/next-course/tree/main/04-reactmeetups)
+[See 04-reactmeetups folder](04-reactmeetups)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/04-reactmeetups">
+    <a href="04-reactmeetups">
         <img src="04-reactmeetups/screenshot.png">
     </a>
 </p>
@@ -118,10 +118,10 @@ A music event website using Strapi CMS as backend.
 
 [See Strapi API deployed on Heroku](https://djevents-strapi.herokuapp.com/events)
 
-[See 05-djevents folder](https://github.com/solygambas/next-course/tree/main/05-djevents)
+[See 05-djevents folder](05-djevents)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/05-djevents">
+    <a href="05-djevents">
         <img src="05-djevents/screenshot.png">
     </a>
 </p>
@@ -150,10 +150,10 @@ A music event website using Strapi CMS as backend.
 
 Another blog using Tailwind CSS and Markdown.
 
-[See 06-devspace folder](https://github.com/solygambas/next-course/tree/main/06-devspace)
+[See 06-devspace folder](06-devspace)
 
 <p align="center">
-    <a href="https://github.com/solygambas/next-course/tree/main/06-devspace">
+    <a href="06-devspace">
         <img src="06-devspace/screenshot.png">
     </a>
 </p>

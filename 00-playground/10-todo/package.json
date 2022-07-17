@@ -1,0 +1,26 @@
+{
+  "name": "10-todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@xstate/react": "^3.0.0",
+    "next": "12.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "xstate": "^4.32.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.0.5",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.2",
+    "typescript": "4.7.4"
+  }
+}

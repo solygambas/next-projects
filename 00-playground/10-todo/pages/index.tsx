@@ -14,6 +14,10 @@ const Home: NextPage = () => {
       saveTodo: async (context, event) => {
         todos.add(context.createNewTodoFormInput);
       },
+      deleteTodo: async (context, event) => {
+        throw new Error("Oh no!");
+        todos.delete(event.todo);
+      },
     },
   });
   return (
@@ -41,6 +45,28 @@ const Home: NextPage = () => {
         Loading todos failed
       </button> */}
       <div>
+        {state.context.todos.map((todo) => (
+          <div
+            key={todo}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <p>{todo}</p>
+            <button
+              onClick={() => {
+                send({
+                  type: "Delete",
+                  todo,
+                });
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
         {state.matches("Todos Loaded") && (
           <button
             onClick={() => {

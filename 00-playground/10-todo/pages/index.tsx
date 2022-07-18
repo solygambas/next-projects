@@ -3,7 +3,14 @@ import { useMachine } from "@xstate/react";
 import { todosMachine } from "../machines/todoAppMachine";
 
 const Home: NextPage = () => {
-  const [state, send] = useMachine(todosMachine);
+  const [state, send] = useMachine(todosMachine, {
+    services: {
+      loadTodos: async () => {
+        // throw new Error("Oh no!");
+        return ["Take bins out", "Do laundry"];
+      },
+    },
+  });
   return (
     <div>
       {JSON.stringify(state.value)}

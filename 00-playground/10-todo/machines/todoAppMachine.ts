@@ -7,32 +7,41 @@ export const todosMachine =
       id: "Todo machine",
       initial: "Loading Todos",
       schema: {
-        events: {} as
-          | { type: "Todos loaded"; todos: string[] }
-          | { type: "Loading todos failed"; errorMessage: string },
+        // events: {} as
+        //   | { type: "Todos loaded"; todos: string[] }
+        //   | { type: "Loading todos failed"; errorMessage: string },
+        services: {} as {
+          loadTodos: {
+            data: string[];
+          };
+        },
       },
       tsTypes: {} as import("./todoAppMachine.typegen").Typegen0,
       states: {
         "Todos Loaded": {},
         "Loading Todos": {
-          on: {
-            "Todos loaded": {
-              target: "Todos Loaded",
-              actions: "consoleLogTodos",
-            },
-            "Loading todos failed": {
-              target: "Loading todos errored",
-            },
+          invoke: {
+            src: "loadTodos",
+            onDone: [
+              {
+                target: "Todos Loaded",
+              },
+            ],
+            onError: [
+              {
+                target: "Loading todos errored",
+              },
+            ],
           },
         },
         "Loading todos errored": {},
       },
-    },
-    {
-      actions: {
-        consoleLogTodos: (context, event) => {
-          alert(JSON.stringify(event.todos));
-        },
-      },
     }
+    // {
+    //   actions: {
+    //     consoleLogTodos: (context, event) => {
+    //       alert(JSON.stringify(event.todos));
+    //     },
+    //   },
+    // }
   );

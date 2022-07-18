@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useMachine } from "@xstate/react";
 import { todosMachine } from "../machines/todoAppMachine";
 
-const todos = new Set<string>(["Take bins out", "Do laundry"]);
+const todos = new Set<string>([]);
 
 const Home: NextPage = () => {
   const [state, send] = useMachine(todosMachine, {
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         todos.add(context.createNewTodoFormInput);
       },
       deleteTodo: async (context, event) => {
-        throw new Error("Oh no!");
+        // throw new Error("Oh no!");
         todos.delete(event.todo);
       },
     },

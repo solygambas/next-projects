@@ -58,7 +58,9 @@ export interface Typegen0 {
       | "done.invoke.Todo machine.Deleting todo:invocation[0]";
     saveTodo: "Submit";
   };
-  eventsCausingGuards: {};
+  eventsCausingGuards: {
+    "Has todos": "done.invoke.Todo machine.Loading Todos:invocation[0]";
+  };
   eventsCausingDelays: {};
   matchesStates:
     | "Todos Loaded"

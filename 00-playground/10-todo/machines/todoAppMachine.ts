@@ -1,7 +1,7 @@
 import { createMachine, assign } from "xstate";
 
 export const todosMachine =
-  /** @xstate-layout N4IgpgJg5mDOIC5QBUD2FUAIC2BDAxgBYCWAdmAHRoayYAyquEkAxAMIBOYuALmJuQDuiUAAdUsYj2KpSIkAA9EARgCcAVgoAWABzqdABgDMBgEzr1p5coA0IAJ4qDOiqtUA2dQHYNB93+stAF8gu2osPCIySnDaBiZWABEwABswPnlxSWlZeSUEIw0KC0srUy8TEws7RwRlA019A3qPby0jZU8QsPQIghJyCniIMihMWJYMQbIAN1QAaxjenH7oocYR0jHYhFnUfF4ZUgBtAwBdTIkpI-lagFodZWKDVR1dV6N-Ax87fOUjVwNdw+HSGIxGfTA7ogcIrKKDYajca9WAsMAcDioDgUUQpXgAMyx2Coy0iA0oiK2yJou1IcwOORO50u2RuSEUKgBqiBILBEJ0wJqiDuylMqmer3eOk+Bmc0NhZLWnG40ipQkwPF6FAAyoRUIIkYSONhMGRRABXHgsABiRNNpAtPEwRFwW0gLOuuXZ+Tu6gM2k6pgFXj0yi0zlsDkQ6lUWgopghCZ03O+7lB8tJq0GysOarAgg1Wt1+sNdrNlpY2vNACNsFIPYy8ogg154+YtKo1ForOoOu4hQhdK3DKYGqpTOV1P5wRmMHDyRQc6qxurNRgdbgZki16hJrJKHtFiS54rs1xcyv84X19rN9verT6YdZKcLuysp65N7EEYdKYKN8zReMYIYJmGXgDgCBgdj445aMoXjhjoXjKLOfTwpQS5IquRZ3lSO5ohiWI4niPBGsSCpZph57LgIV47huW74Q+ewMkcr4NmyoD5CY7jxpUf6dBY9RGAO7j-BQFSWOG0HuGm3hofOazJGktEEeimLYriBJEse6ELip6T3hgj77M+TJvmIVyNt+CDAeKFSdihbzTtYA7lC46j1J07SObonSKaelCGWpvR7tMdILEsJ5URQIXGagplsS+zLvtZXEcggfr-ghWjuEYE7JoUnZaAOdwdhKbxaNVXlyR2IShCApDoHA8iURhelxBs7ppayXrcSoyguChagVMmliih4kHiloPgdKYs2WKUgWxZS2wopx-WZXco5PK844FdKqiFN8ZWPJVUoyt8qgrR1a3XhImAaViPVWX1X4DQgO3lBQ7gHTGYqWHoolRnUEnju43Z-t2spDbdC5YXmBYMcWBpUuR9qOptH2Zd4xTSod4KxmKGilaD-kUCYo7eOUMGPOo8NKjR2H0bhTFjDu2NNoOZgUGobT6KoIb6OoA55Zo3zwX9Xgy6KXgKY17UI8zSMPVztl3IhAbuEGwKhkhka1IU-6S12EP7cEiuZh18XMRg6ufSLrhaL2SF5Z8KEDsoFgUI8wIxp24k60YjODLbHPLM9XAQA7mVpi44mdP41UvGoqiQUYrajhC-i9sm-w3VbMUYbHPrmE8f0JgDGhBr2ZWjv+fqSqYab1G0OgNUEQA */
+  /** @xstate-layout N4IgpgJg5mDOIC5QBUD2FUAIC2BDAxgBYCWAdmAHRoayYAyquEkAxAMIBOYuALmJuQDuiUAAdUsYj2KpSIkAA9EARgCcAVgoAWABzqdABgDMBgEzr1p5coA0IAJ4qDOiqtUA2dQHYNB93+stAF8gu2osPCIySnDaBiZWABEwABswPnlxSWlZeSUEIw0KC0srUy8TEws7RwRlA019A3qPby0jZU8QsPQIghJyCniIMihMWJYMQbIAN1QAaxjenH7oocYR0jHYhFnUfF4ZUgBtAwBdTIkpI-lagFodZWKDVR1dV6N-Ax87fOUjVwNdw+HSGIxGfTA7ogcIrKKDYajca9WAsMAcDioDgUUQpXgAMyx2Coy0iA0oiK2yJou1IcwOORO50u2RuSEUKgBqiBILBEJ0wJqiDuylMqmer3eOk+Bmc0NhZLWnG40ipQkwPF6FAAyoRUIIkYSONhMGRRABXHgsABiRNNpAtPEwRFwW0gLOuuXZ+Tu6gM2k6pgFXj0yi0zlsDkQ6lUWgopghCZ03O+7lB8tJq0GysOarAgg1Wt1+sNdrNlpY2vNACNsFIPYy8ogg154+YtKo1ForOoOu4hQhdK3DKYGqpTOV1P5wRmMHDyRQc6qxurNRgdbgZki16hJrJKHtFiS54rs1xcyv84X19rN9verT6YdZKcLuysp65N7EEYdKYKN8zReMYIYJmGXgDgCBgdj445aMoXjhjoXjKLOfTwpQS5IquRZ3lSO5ohiWI4niPBGsSCpZph57LgIV47huW74Q+ewMkcr4NmyoD5CY7jxpUf6dBY9RGAO7j-BQFSWOG0HuGm3hofOazJGktEEVMB50gsSwnlRFAqek94YI++zPkyb5iFcjbfggfr-ghWjuEYE7JoUnZaAOdwdhKbxaH56idO4HaKaelAGWpvSEZi2K4gSRLHuhC7hUZqAmWxL7Mu+VlcRyCDAeKFSdihbzTtYA7lC4AXNEFRiFbonQhXpyXMXO6LRawCiwDwvCULg+J8BwAAU5iygAlCwlEYfpqSGS1WBtVi7pZayXrcT+agUI85iglUXjqFoU7lV4rbOO43IaJ0yF6O4jVTc1Yw7pgC1cBAlaiGAkCYOaoicatuUHeK8HKI8l1eMCyjqAOXabfB7TghYIO-iEoQgKQ6BwPIk0LrE9AbEtlkrV+a11MDknWKoFTJpYooeJBgM+B0phaHt5gTrdC6UtsKK-UTuV3KOTyvOOznSqohTfJ5jw+VKMrfKo7NrJz14SE9REvTzTYIPz5QUGdCYxmKlh6KJUYk1yphBUGTOjs0OgK2eKrYfRRZ6gaVLkfajoazZ3jFNKIvgrGYoaB5pv1RQJijt45QwY86j29Rjt5gWDG3kxD29N7xPhvZGiIfoFN6HoA6OZo3zwWdx0oZOXgJ4uNFOynmfLZ+mt3IhAbuEGwKhkhka1IU-7l1245ncmwQo1jykzRFGBZ7l+iaLGvZIY5nwoVDFibZ0e1uJ0gZGHX93K6r7UQPP+Rpi44mBdB4adm4kG1fGxhTg0v6doUCcX8K5hPHrEJxwaCDL2Tyo5-x+klIVIMyFULIyAA */
   createMachine(
     {
       context: {
@@ -18,7 +18,8 @@ export const todosMachine =
           | { type: "Create new" }
           | { type: "Form input changed"; value: string }
           | { type: "Submit" }
-          | { type: "Delete"; todo: string },
+          | { type: "Delete"; todo: string }
+          | { type: "Speed up" },
         services: {} as {
           loadTodos: {
             data: string[];
@@ -96,20 +97,31 @@ export const todosMachine =
         "Deleting todo": {
           invoke: {
             src: "deleteTodo",
-            onError: [
-              {
-                target: "Deleting todo errored",
-                actions: "assignErrorToContext",
-              },
-            ],
             onDone: [
               {
                 target: "Loading Todos",
               },
             ],
+            onError: [
+              {
+                actions: "assignErrorToContext",
+                target: "Deleting todo errored",
+              },
+            ],
           },
         },
-        "Deleting todo errored": {},
+        "Deleting todo errored": {
+          after: {
+            "2500": {
+              target: "Todos Loaded",
+            },
+          },
+          on: {
+            "Speed up": {
+              target: "Todos Loaded",
+            },
+          },
+        },
       },
     },
     {

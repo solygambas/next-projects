@@ -19,4 +19,4 @@ A to-do list app using XState and the Stately tools.
 - using after to manage timeouts.
 - adding if/else logic with guards.
 
-Based on [The Official Beginner’s Guide to XState in React](https://www.youtube.com/playlist?list=PLvWgkXBB3dd4ocSi17y1JmMmz7S5cV8vI) by Stately (2022).
+Based on [The Official Beginner’s Guide to XState in React](https://www.youtube.com/playlist?list=PLvWgkXBB3dd4ocSi17y1JmMmz7S5cV8vI) by Matt Pocock - Stately (2022).

@@ -35,6 +35,27 @@ const Home: NextPage = () => {
       >
         Loading todos failed
       </button> */}
+      <div>
+        {state.matches("Todos Loaded") && (
+          <button
+            onClick={() => {
+              send({ type: "Create new" });
+            }}
+          >
+            Create new
+          </button>
+        )}
+        {state.matches("Creating new todo.Showing form input") && (
+          <input
+            onChange={(e) => {
+              send({
+                type: "Form input changed",
+                value: e.target.value,
+              });
+            }}
+          />
+        )}
+      </div>
     </div>
   );
 };

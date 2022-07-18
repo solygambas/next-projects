@@ -4,7 +4,9 @@ export interface Typegen0 {
   "@@xstate/typegen": true;
   eventsCausingActions: {
     assignTodosToContext: "done.invoke.Todo machine.Loading Todos:invocation[0]";
-    assignErrorToContext: "error.platform.Todo machine.Loading Todos:invocation[0]";
+    assignErrorToContext:
+      | "error.platform.Todo machine.Loading Todos:invocation[0]"
+      | "error.platform.Todo machine.Creating new todo.Saving todo:invocation[0]";
     assignFormInputToContext: "Form input changed";
   };
   internalEvents: {
@@ -17,19 +19,30 @@ export interface Typegen0 {
       type: "error.platform.Todo machine.Loading Todos:invocation[0]";
       data: unknown;
     };
+    "error.platform.Todo machine.Creating new todo.Saving todo:invocation[0]": {
+      type: "error.platform.Todo machine.Creating new todo.Saving todo:invocation[0]";
+      data: unknown;
+    };
+    "done.invoke.Todo machine.Creating new todo.Saving todo:invocation[0]": {
+      type: "done.invoke.Todo machine.Creating new todo.Saving todo:invocation[0]";
+      data: unknown;
+      __tip: "See the XState TS docs to learn how to strongly type this.";
+    };
     "xstate.init": { type: "xstate.init" };
   };
   invokeSrcNameMap: {
     loadTodos: "done.invoke.Todo machine.Loading Todos:invocation[0]";
+    saveTodo: "done.invoke.Todo machine.Creating new todo.Saving todo:invocation[0]";
   };
   missingImplementations: {
     actions: never;
-    services: "loadTodos";
+    services: "loadTodos" | "saveTodo";
     guards: never;
     delays: never;
   };
   eventsCausingServices: {
-    loadTodos: "xstate.init";
+    loadTodos: "done.invoke.Todo machine.Creating new todo.Saving todo:invocation[0]";
+    saveTodo: "Submit";
   };
   eventsCausingGuards: {};
   eventsCausingDelays: {};
@@ -39,6 +52,7 @@ export interface Typegen0 {
     | "Loading todos errored"
     | "Creating new todo"
     | "Creating new todo.Showing form input"
-    | { "Creating new todo"?: "Showing form input" };
+    | "Creating new todo.Saving todo"
+    | { "Creating new todo"?: "Showing form input" | "Saving todo" };
   tags: never;
 }

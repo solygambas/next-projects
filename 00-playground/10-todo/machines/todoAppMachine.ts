@@ -1,24 +1,38 @@
 import { createMachine } from "xstate";
 
-const machine =
-  /** @xstate-layout N4IgpgJg5mDOIC5QAkD2A3MAnABAWwEMBjACwEsA7MAOjUy0gGIBZAeQFUBlAUQ4BVEoAA6pYZAC5lUFQSAAeiALQBGABzLqygCzKArOoBsABgBMugMwXVAGhABPRFvPUTqrbpMnzy8wE4zegC+gbZ02PjE5FTUAHKo4jhhDBAsHDysAGrcAEqyImKS0rIKCNpG1L5G5uYA7Lp6qqomNSYGtg4IinXURka+qroWzQa6vjVawSEgFKgQcLJJEaSUNEmQeaISUjJI8og+qtQGI0YGdb6+5qoGl+2I5gbUNW66RrpaBsquWma6waEYcKEZbROIJNYQDYFbbFJQmIwafr+cyuPx+Iw1O6ddTUV79LSqfoPXo1Xz-ECLYFRMBQrZFXYlRSeXQVQleVGXSqY+xKPRaXF9a5qZpaAnVSaBIA */
-  createMachine({
-    initial: "Not Hovered",
-    states: {
-      Hovered: {
-        on: {
-          MOUSEOUT: {
-            target: "Not Hovered",
-          },
-        },
+export const todosMachine =
+  /** @xstate-layout N4IgpgJg5mDOIC5QBUD2FUAIC2BDAxgBYCWAdmAHQAyquEZUmaGsAxM6rJgDa0SSJQAB07EALsVSlBIAB6IAjABYADBQCcKgMxaA7AFYF+gBzGATLrMA2ADQgAnogC0BiipXrj+-VotX96rpKAL7Bdhw4BCTk1HwMTOicrDR08WKJXABmuMTcAkggIrDiktIF8ghOZioKFFo1QSpWSrrGSvVmdo4I1RTGClpW5lrqSqZaA8ahYSCk6HAyEXhEZJQcXCn8EDJFJVIyFQoKxhS6R4Faxur6Zgpm6rYOiCMULeoTZi03N2ah4YmRFYxTbxdY7UQSfblZzVWqedRmXzGEYjFS6LrOfoUfQeNpXZFWdy6dR-EBLKKrWKpUiMdIsTBgABOjNQjPywghpQOMIsFCsCK0AXuNy8WgxCCOWg01iUZnMsvcx1J5KBYHBxUhZVAFSqhj5AqF1zlPnFTiMSmxuMuVnqQS802CQA */
+  createMachine(
+    {
+      id: "Todo machine",
+      initial: "Loading Todos",
+      schema: {
+        events: {} as
+          | { type: "Todos loaded"; todos: string[] }
+          | { type: "Loading todos failed"; errorMessage: string },
       },
-      "Not Hovered": {
-        on: {
-          MOUSEOVER: {
-            target: "Hovered",
+      tsTypes: {} as import("./todoAppMachine.typegen").Typegen0,
+      states: {
+        "Todos Loaded": {},
+        "Loading Todos": {
+          on: {
+            "Todos loaded": {
+              target: "Todos Loaded",
+              actions: "consoleLogTodos",
+            },
+            "Loading todos failed": {
+              target: "Loading todos errored",
+            },
           },
         },
+        "Loading todos errored": {},
       },
     },
-    id: "Hover machine",
-  });
+    {
+      actions: {
+        consoleLogTodos: (context, event) => {
+          alert(JSON.stringify(event.todos));
+        },
+      },
+    }
+  );

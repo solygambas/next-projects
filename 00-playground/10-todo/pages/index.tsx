@@ -1,14 +1,32 @@
 import type { NextPage } from "next";
 import { useMachine } from "@xstate/react";
-import { myMachine } from "../machines/myFirstMachine";
+import { todosMachine } from "../machines/todoAppMachine";
 
 const Home: NextPage = () => {
-  const [state, send] = useMachine(myMachine);
+  const [state, send] = useMachine(todosMachine);
   return (
     <div>
       {JSON.stringify(state.value)}
-      <button onClick={() => send("MOUSEOVER")}>Mouse over</button>
-      <button onClick={() => send("MOUSEOUT")}>Mouse out</button>
+      <button
+        onClick={() =>
+          send({
+            type: "Todos loaded",
+            todos: ["Take bins out"],
+          })
+        }
+      >
+        Todos loaded
+      </button>
+      <button
+        onClick={() =>
+          send({
+            type: "Loading todos failed",
+            errorMessage: "Oh no!",
+          })
+        }
+      >
+        Loading todos failed
+      </button>
     </div>
   );
 };

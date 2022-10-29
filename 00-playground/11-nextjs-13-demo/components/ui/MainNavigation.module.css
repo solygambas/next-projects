@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  background-color: #430672;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+}

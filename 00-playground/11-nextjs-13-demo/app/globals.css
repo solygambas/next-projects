@@ -21,3 +21,7 @@ ul {
 .center {
   text-align: center;
 }
+
+.message {
+  padding: 3rem;
+}

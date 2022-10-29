@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import classes from "./layout.module.css";
-import IssuesList from "../../components/issues/issueList";
+import IssuesListing from "../../components/issues/IssueListing";
 
 export default async function IssuesLayout({
   children,
@@ -12,7 +12,7 @@ export default async function IssuesLayout({
   return (
     <div className={classes.layout}>
       <aside className={classes.sidebar}>
-        <IssuesList issues={issues} />
+        <IssuesListing issues={issues} />
       </aside>
       {children}
     </div>

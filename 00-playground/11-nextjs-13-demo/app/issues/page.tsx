@@ -1,3 +1,3 @@
 export default function IssuesPage() {
-  return <h1>The Issues Page</h1>;
+  return <p className="message">Please select an issue</p>;
 }

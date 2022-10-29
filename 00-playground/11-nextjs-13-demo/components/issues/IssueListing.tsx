@@ -1,11 +1,5 @@
 import Link from "next/link";
-
-interface Issue {
-  id: number;
-  title: string;
-  summary: string;
-  description: string;
-}
+import Issue from "./types";
 
 function IssuesList({ issues }: { issues: Issue[] }) {
   return (

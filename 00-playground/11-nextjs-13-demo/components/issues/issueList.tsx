@@ -4,6 +4,7 @@ interface Issue {
   id: number;
   title: string;
   summary: string;
+  description: string;
 }
 
 function IssuesList({ issues }: { issues: Issue[] }) {

@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.sidebar {
+  height: 100vh;
+  padding: 0 2rem;
+  background-color: #29252e;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar li {
+  padding: 1rem;
+  border-bottom: 2px solid #46404c;
+  color: white;
+}
+
+.sidebar a {
+  color: #cda7fa;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #b47df7;
+}

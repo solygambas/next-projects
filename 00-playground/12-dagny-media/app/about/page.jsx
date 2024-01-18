@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "About Dagny Media",
+};
+
 const AboutPage = () => {
   return (
     <div>

@@ -13,5 +13,6 @@ A quick intro to NextJS 13 features, using TailwindCSS.
 - building a layout with components.
 - handling styles, fonts, and images.
 - fetching and revalidating data, using JSON server locally.
+- supporting dynamic routing.
 
 Based on [Next.js 13 Crash Course](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jZIVqmy_QhfQdi6mzQvJnT) by Shaun Pelling - Net Ninja (2023).

@@ -1,7 +1,23 @@
+import { notFound } from "next/navigation";
+
+export const dynamicParams = true;
+
+export async function generateStaticPaths() {
+  const response = await fetch("http://localhost:4000/tickets");
+  const tickets = await response.json();
+  const paths = tickets.map((ticket) => ({
+    params: { id: ticket.id },
+  }));
+  return { paths };
+}
+
 async function getTicket(id) {
   const response = await fetch(`http://localhost:4000/tickets/${id}`, {
-    next: { revalidate: 60 }, // opt out of using cache
+    next: { revalidate: 60 },
   });
+  if (!response.ok) {
+    notFound();
+  }
   const data = await response.json();
   return data;
 }

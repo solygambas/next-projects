@@ -11,6 +11,10 @@
 | 05  | [**DJ Events**](#djevents)         | A music event website using Strapi CMS as backend.                                                |
 | 06  | [**DevSpace**](#devspace)          | Another blog using Tailwind CSS and Markdown.                                                     |
 
+## Get Inspired
+
+Check out our [collection of articles](https://www.onbusinessplan.com/) for those beginning their web development journey. Find tips, tricks, and motivational content to keep you engaged and motivated throughout your learning process.
+
 ## <a name="nextevents"></a> 1) NextEvents
 
 A social networking site using Next.js, MongoDB and Firebase.
@@ -168,7 +172,13 @@ Another blog using Tailwind CSS and Markdown.
 - handling searches with an API route.
 - [caching posts](https://medium.com/@matswainson/building-a-search-component-for-your-next-js-markdown-blog-9e75e0e7d210) on each commit with Husky.
 
+## Acknowledgments
+
 This repository is based on 2 courses:
 
 - [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021)
 - [Next.js Dev to Deployment](https://www.udemy.com/course/nextjs-dev-to-deployment/) by Brad Traversy (2021)
+
+## Show Your Support
+
+If you find these projects helpful or interesting, please consider starring the repository. It's a simple gesture that helps to boost the visibility of the project and show appreciation for the effort put into creating it. Thank you!

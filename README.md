@@ -2,14 +2,15 @@
 
 6 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.
 
-| #   | Project                            | Description                                                                                       |
-| --- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 01  | [**NextEvents**](#nextevents)      | A social networking site using Next.js, MongoDB and Firebase.                                     |
-| 02  | [**Blog**](#blog)                  | A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter. |
-| 03  | [**Dashboard**](#dashboard)        | A very simple dashboard to understand authentication with NextAuth.js.                            |
-| 04  | [**React Meetups**](#reactmeetups) | Another social networking site to summarize Next.js core concepts.                                |
-| 05  | [**DJ Events**](#djevents)         | A music event website using Strapi CMS as backend.                                                |
-| 06  | [**DevSpace**](#devspace)          | Another blog using Tailwind CSS and Markdown.                                                     |
+| #   | Project                              | Description                                                                                       |
+| --- | ------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| 01  | [**NextEvents**](#nextevents)        | A social networking site using Next.js, MongoDB and Firebase.                                     |
+| 02  | [**Blog**](#blog)                    | A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter. |
+| 03  | [**Dashboard**](#dashboard)          | A very simple dashboard to understand authentication with NextAuth.js.                            |
+| 04  | [**React Meetups**](#reactmeetups)   | Another social networking site to summarize Next.js core concepts.                                |
+| 05  | [**DJ Events**](#djevents)           | A music event website using Strapi CMS as backend.                                                |
+| 06  | [**DevSpace**](#devspace)            | Another blog using Tailwind CSS and Markdown.                                                     |
+| 07  | [**Property Pulse**](#propertypulse) | A property rental website using Tailwind CSS, MongoDB and TypeScript.                             |
 
 ## Get Inspired
 
@@ -172,12 +173,27 @@ Another blog using Tailwind CSS and Markdown.
 - handling searches with an API route.
 - [caching posts](https://medium.com/@matswainson/building-a-search-component-for-your-next-js-markdown-blog-9e75e0e7d210) on each commit with Husky.
 
+## <a name="propertypulse"></a> 7) Property Pulse
+
+A property rental website using Tailwind CSS, MongoDB and TypeScript.
+
+[See 07-property-pulse folder](07-property-pulse)
+
+<!-- <p align="center">
+    <a href="07-property-pulse">
+        <img src="07-property-pulse/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
 ## Acknowledgments
 
-This repository is based on 2 courses:
+This repository is based on 3 courses:
 
 - [Next.js & React - The Complete Guide](https://www.udemy.com/course/nextjs-react-the-complete-guide/) by Maximilian Schwarzmüller (2021)
 - [Next.js Dev to Deployment](https://www.udemy.com/course/nextjs-dev-to-deployment/) by Brad Traversy (2021)
+- [Next.js From Scratch](https://www.udemy.com/course/nextjs-from-scratch/) by Brad Traversy (2024)
 
 ## Show Your Support
 

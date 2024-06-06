@@ -1,6 +1,6 @@
 # Next.js Projects
 
-6 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.
+7 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.
 
 | #   | Project                              | Description                                                                                       |
 | --- | ------------------------------------ | ------------------------------------------------------------------------------------------------- |
@@ -186,6 +186,9 @@ A property rental website using Tailwind CSS, MongoDB and TypeScript.
 </p> -->
 
 ### Features
+
+- setting up the project with Tailwind CSS and TypeScript.
+- displaying a NavBar, using React Icons.
 
 ## Acknowledgments
 

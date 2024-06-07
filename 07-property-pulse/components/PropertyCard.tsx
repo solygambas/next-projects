@@ -1,3 +1,4 @@
+import { Property } from "@/models/Property";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,44 +9,8 @@ import {
   FaMapMarker,
 } from "react-icons/fa";
 
-type Location = {
-  street: string;
-  city: string;
-  state: string;
-  zipcode: string;
-};
-
-type Rates = {
-  nightly?: number;
-  weekly?: number;
-  monthly?: number;
-};
-
-type SellerInfo = {
-  name: string;
-  email: string;
-  phone: string;
-};
-
 type PropertyCardProps = {
-  property: {
-    _id: string;
-    owner: string;
-    name: string;
-    type: string;
-    description: string;
-    location: Location;
-    beds: number;
-    baths: number;
-    square_feet: number;
-    amenities: string[];
-    rates: Rates;
-    seller_info: SellerInfo;
-    images: string[];
-    is_featured: boolean;
-    createdAt: string;
-    updatedAt: string;
-  };
+  property: Property;
 };
 
 const PropertyCard = ({ property }: PropertyCardProps) => {

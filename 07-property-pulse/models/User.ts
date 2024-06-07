@@ -26,6 +26,6 @@ const UserSchema = new Schema<GoogleUser>(
   { timestamps: true }
 );
 
-const User = models.User || model<GoogleUser>("User", UserSchema);
+const User = models.User<GoogleUser> || model<GoogleUser>("User", UserSchema);
 
 export default User;

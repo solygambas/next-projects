@@ -1,4 +1,4 @@
-import { Property } from "@/models/Property";
+import { PropertyInterface } from "@/models/Property";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 type PropertyCardProps = {
-  property: Property;
+  property: PropertyInterface;
 };
 
 const PropertyCard = ({ property }: PropertyCardProps) => {

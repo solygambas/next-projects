@@ -19,7 +19,7 @@ type SellerInfo = {
   phone?: string;
 };
 
-export interface Property {
+export interface PropertyInterface {
   _id: string;
   owner: ObjectId;
   name: string;
@@ -38,7 +38,7 @@ export interface Property {
   updatedAt: string;
 }
 
-const PropertySchema = new Schema<Property>(
+const PropertySchema = new Schema<PropertyInterface>(
   {
     owner: {
       type: Schema.Types.ObjectId,
@@ -118,6 +118,8 @@ const PropertySchema = new Schema<Property>(
   { timestamps: true }
 );
 
-const Property = models.Property || model<Property>("Property", PropertySchema);
+const Property =
+  models.Property<PropertyInterface> ||
+  model<PropertyInterface>("Property", PropertySchema);
 
 export default Property;

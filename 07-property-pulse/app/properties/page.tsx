@@ -1,17 +1,6 @@
 import PropertyCard from "@/components/PropertyCard";
 import { PropertyInterface } from "@/models/Property";
-
-async function fetchProperties() {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`
-    );
-    if (!response.ok) throw new Error("Failed to fetch data");
-    return await response.json();
-  } catch (error) {
-    console.log(error);
-  }
-}
+import { fetchProperties } from "@/utils/requests";
 
 export default async function PropertiesPage() {
   const properties: PropertyInterface[] = await fetchProperties();

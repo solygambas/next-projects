@@ -175,7 +175,7 @@ Another blog using Tailwind CSS and Markdown.
 
 ## <a name="propertypulse"></a> 7) Property Pulse
 
-A property rental website using Tailwind CSS, MongoDB and TypeScript.
+A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 
 [See 07-property-pulse folder](07-property-pulse)
 
@@ -188,7 +188,10 @@ A property rental website using Tailwind CSS, MongoDB and TypeScript.
 ### Features
 
 - setting up the project with Tailwind CSS and TypeScript.
-- displaying a NavBar, using React Icons.
+- implementing a responsive navbar with React Icons.
+- integrating homepage components.
+- crafting a property card component to showcase available properties.
+- designing a custom 404 page and incorporating loading spinners from React Spinners.
 
 ## Acknowledgments
 

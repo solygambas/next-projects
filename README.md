@@ -10,7 +10,7 @@
 | 04  | [**React Meetups**](#reactmeetups)   | Another social networking site to summarize Next.js core concepts.                                |
 | 05  | [**DJ Events**](#djevents)           | A music event website using Strapi CMS as backend.                                                |
 | 06  | [**DevSpace**](#devspace)            | Another blog using Tailwind CSS and Markdown.                                                     |
-| 07  | [**Property Pulse**](#propertypulse) | A property rental website using Tailwind CSS, MongoDB and TypeScript.                             |
+| 07  | [**Property Pulse**](#propertypulse) | A property rental website using Tailwind CSS, MongoDB, and TypeScript.                            |
 
 ## Get Inspired
 
@@ -192,6 +192,10 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - integrating homepage components.
 - crafting a property card component to showcase available properties.
 - designing a custom 404 page and incorporating loading spinners from React Spinners.
+- establishing a MongoDB Atlas database.
+- creating an API route.
+- constructing Property and User models using Mongoose and TypeScript.
+- fetching data in a server component.
 
 ## Acknowledgments
 

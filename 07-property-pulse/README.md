@@ -13,5 +13,9 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - integrating homepage components.
 - crafting a property card component to showcase available properties.
 - designing a custom 404 page and incorporating loading spinners from React Spinners.
+- establishing a MongoDB Atlas database.
+- creating an API route.
+- constructing Property and User models using Mongoose and TypeScript.
+- fetching data in a server component.
 
 Based on [Next.js From Scratch](https://www.udemy.com/course/nextjs-from-scratch/) by Brad Traversy (2024).

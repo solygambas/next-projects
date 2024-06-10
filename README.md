@@ -196,6 +196,9 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - creating an API route.
 - constructing Property and User models using Mongoose and TypeScript.
 - fetching data in a server component.
+- setting up NextAuth.js with Google OAuth.
+- handling user sessions, with the ability to sign in and out.
+- ensuring that certain routes are accessible only to authenticated users.
 
 ## Acknowledgments
 

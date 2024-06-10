@@ -19,9 +19,7 @@ type SellerInfo = {
   phone?: string;
 };
 
-export interface PropertyInterface {
-  _id: string;
-  owner: ObjectId;
+export interface PropertyFormInterface {
   name: string;
   type: string;
   description?: string;
@@ -33,6 +31,11 @@ export interface PropertyInterface {
   rates: Rates;
   seller_info: SellerInfo;
   images: string[];
+}
+
+export interface PropertyInterface extends PropertyFormInterface {
+  _id: string;
+  owner: ObjectId;
   is_featured: boolean;
   createdAt: string;
   updatedAt: string;

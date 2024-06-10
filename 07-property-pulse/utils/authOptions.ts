@@ -1,6 +1,7 @@
+import { AuthOptions, Profile, Session } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -15,11 +16,11 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    // async signIn({profile }) {
-    //     //
-    // },
-    // async session({session }) {
-    //     //
-    // }
+    async signIn({ profile }: { profile?: Profile }) {
+      return true;
+    },
+    async session({ session }: { session: Session }) {
+      return session;
+    },
   },
 };

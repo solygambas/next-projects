@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { PropertyFormInterface } from "@/models/Property";
 
 const PropertyAddForm = () => {
@@ -33,9 +33,57 @@ const PropertyAddForm = () => {
 
   useEffect(() => setMounted(true), []);
 
-  const handleChange = () => {};
-  const handleAmenitiesChange = () => {};
-  const handleImageChange = () => {};
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    if (name.includes(".")) {
+      const [outerKey, innerKey] = name.split(".");
+      setFields((prev) => ({
+        ...prev,
+        [outerKey]: {
+          ...(prev[outerKey as keyof PropertyFormInterface] as object),
+          [innerKey]: value,
+        },
+      }));
+    } else {
+      setFields((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+  const handleAmenitiesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = e.target;
+    const updatedAmenities = [...fields.amenities];
+    if (checked) {
+      updatedAmenities.push(value);
+    } else {
+      const index = updatedAmenities.indexOf(value);
+      if (index !== -1) {
+        updatedAmenities.splice(index, 1);
+      }
+    }
+    setFields((prev) => ({
+      ...prev,
+      amenities: updatedAmenities,
+    }));
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { files } = e.target;
+    if (!files) return;
+    const updatedImages = [...fields.images];
+    for (const file of Array.from(files)) {
+      updatedImages.push(file);
+    }
+    setFields((prev) => ({
+      ...prev,
+      images: updatedImages,
+    }));
+  };
 
   return (
     mounted && (

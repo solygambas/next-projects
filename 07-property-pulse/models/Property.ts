@@ -30,7 +30,7 @@ export interface PropertyFormInterface {
   amenities: string[];
   rates: Rates;
   seller_info: SellerInfo;
-  images: string[];
+  images: File[];
 }
 
 export interface PropertyInterface extends PropertyFormInterface {

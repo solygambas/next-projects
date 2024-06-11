@@ -19,7 +19,7 @@ type SellerInfo = {
   phone?: string;
 };
 
-export interface PropertyFormInterface {
+export interface BasePropertyInterface {
   name: string;
   type: string;
   description?: string;
@@ -30,15 +30,19 @@ export interface PropertyFormInterface {
   amenities: string[];
   rates: Rates;
   seller_info: SellerInfo;
+}
+
+export interface PropertyFormInterface extends BasePropertyInterface {
   images: File[];
 }
 
-export interface PropertyInterface extends PropertyFormInterface {
+export interface PropertyInterface extends BasePropertyInterface {
   _id: string;
   owner: ObjectId;
   is_featured: boolean;
   createdAt: string;
   updatedAt: string;
+  images: string[];
 }
 
 const PropertySchema = new Schema<PropertyInterface>(

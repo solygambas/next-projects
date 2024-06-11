@@ -1,8 +1,9 @@
 import connectDB from "@/config/database";
 import Property, {
-  PropertyFormInterface,
+  PropertyAPIInterface,
   PropertyInterface,
 } from "@/models/Property";
+import { getSessionUser } from "@/utils/getSessionUser";
 
 // GET /api/properties
 export const GET = async (req: Request, res: Response) => {
@@ -21,6 +22,11 @@ export const GET = async (req: Request, res: Response) => {
 export const POST = async (req: Request, res: Response) => {
   try {
     await connectDB();
+    const sessionUser = await getSessionUser();
+    if (!sessionUser || !sessionUser.userId) {
+      return new Response("Unauthorized", { status: 401 });
+    }
+    const { userId } = sessionUser;
     const formData = await req.formData();
     const amenities = formData.getAll("amenities");
     const images = formData
@@ -28,25 +34,25 @@ export const POST = async (req: Request, res: Response) => {
       .filter(
         (image): image is File => image instanceof File && image.name !== ""
       );
-    const propertyData: PropertyFormInterface = {
-      type: formData.get("type") as PropertyFormInterface["type"],
-      name: formData.get("name") as PropertyFormInterface["name"],
+    const propertyData: PropertyAPIInterface = {
+      type: formData.get("type") as PropertyAPIInterface["type"],
+      name: formData.get("name") as PropertyAPIInterface["name"],
       description: formData.get(
         "description"
-      ) as PropertyFormInterface["description"],
+      ) as PropertyAPIInterface["description"],
       location: {
         street: formData.get(
           "location.street"
-        ) as PropertyFormInterface["location"]["street"],
+        ) as PropertyAPIInterface["location"]["street"],
         city: formData.get(
           "location.city"
-        ) as PropertyFormInterface["location"]["city"],
+        ) as PropertyAPIInterface["location"]["city"],
         state: formData.get(
           "location.state"
-        ) as PropertyFormInterface["location"]["state"],
+        ) as PropertyAPIInterface["location"]["state"],
         zipcode: formData.get(
           "location.zipcode"
-        ) as PropertyFormInterface["location"]["zipcode"],
+        ) as PropertyAPIInterface["location"]["zipcode"],
       },
       beds: parseInt(formData.get("beds") as string, 10),
       baths: parseInt(formData.get("baths") as string, 10),
@@ -60,18 +66,24 @@ export const POST = async (req: Request, res: Response) => {
       seller_info: {
         name: formData.get(
           "seller_info.name"
-        ) as PropertyFormInterface["seller_info"]["name"],
+        ) as PropertyAPIInterface["seller_info"]["name"],
         email: formData.get(
           "seller_info.email"
-        ) as PropertyFormInterface["seller_info"]["email"],
+        ) as PropertyAPIInterface["seller_info"]["email"],
         phone: formData.get(
           "seller_info.phone"
-        ) as PropertyFormInterface["seller_info"]["phone"],
+        ) as PropertyAPIInterface["seller_info"]["phone"],
       },
       images: images,
+      owner: userId,
     };
-    console.log(propertyData);
-    return new Response("Success", { status: 200 });
+    const newProperty = new Property(propertyData);
+    await newProperty.save();
+
+    return Response.redirect(
+      `${process.env.NEXTAUTH_URL}/properties/${newProperty._id}`
+    );
+    // return new Response("Success", { status: 200 });
   } catch (error) {
     return new Response("Failed to add property", { status: 500 });
   }

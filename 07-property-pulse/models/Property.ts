@@ -36,6 +36,10 @@ export interface PropertyFormInterface extends BasePropertyInterface {
   images: File[];
 }
 
+export interface PropertyAPIInterface extends PropertyFormInterface {
+  owner: string;
+}
+
 export interface PropertyInterface extends BasePropertyInterface {
   _id: string;
   owner: ObjectId;

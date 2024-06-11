@@ -1,4 +1,5 @@
-import { ObjectId, Schema, model, models } from "mongoose";
+import { ObjectId as BSONObjectId } from "bson";
+import { Schema, model, models } from "mongoose";
 
 type Location = {
   street?: string;
@@ -36,20 +37,19 @@ export interface PropertyFormInterface extends BasePropertyInterface {
   images: File[];
 }
 
-export interface PropertyAPIInterface extends PropertyFormInterface {
-  owner: string;
-}
-
-export interface PropertyInterface extends BasePropertyInterface {
-  _id: string;
-  owner: ObjectId;
+export interface PropertyAPIInterface extends BasePropertyInterface {
+  owner: BSONObjectId;
   is_featured: boolean;
-  createdAt: string;
-  updatedAt: string;
   images: string[];
 }
 
-const PropertySchema = new Schema<PropertyInterface>(
+export interface PropertyInterface extends PropertyAPIInterface {
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+const PropertySchema = new Schema<PropertyAPIInterface>(
   {
     owner: {
       type: Schema.Types.ObjectId,
@@ -130,7 +130,7 @@ const PropertySchema = new Schema<PropertyInterface>(
 );
 
 const Property =
-  models.Property<PropertyInterface> ||
-  model<PropertyInterface>("Property", PropertySchema);
+  models.Property<PropertyAPIInterface> ||
+  model<PropertyAPIInterface>("Property", PropertySchema);
 
 export default Property;

@@ -179,11 +179,11 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 
 [See 07-property-pulse folder](07-property-pulse)
 
-<!-- <p align="center">
+<p align="center">
     <a href="07-property-pulse">
         <img src="07-property-pulse/screenshot.png">
     </a>
-</p> -->
+</p>
 
 ### Features
 

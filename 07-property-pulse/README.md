@@ -2,9 +2,9 @@
 
 A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 
-<!-- <p align="center">
+<p align="center">
     <img src="screenshot.png">
-</p> -->
+</p>
 
 ## Features
 

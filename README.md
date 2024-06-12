@@ -199,6 +199,8 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - setting up NextAuth.js with Google OAuth.
 - handling user sessions, with the ability to sign in and out.
 - ensuring that certain routes are accessible only to authenticated users.
+- handling the property submission form.
+- implementing Cloudinary for image storage and optimization.
 
 ## Acknowledgments
 

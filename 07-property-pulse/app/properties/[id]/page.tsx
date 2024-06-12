@@ -7,6 +7,7 @@ import { fetchProperty } from "@/utils/requests";
 import Spinner from "@/components/Spinner";
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import PropertyDetails from "@/components/PropertyDetails";
+import PropertyImages from "@/components/PropertyImages";
 import { PropertyInterface } from "@/models/Property";
 
 export default function PropertyPage() {
@@ -144,6 +145,7 @@ export default function PropertyPage() {
               </div>
             </div>
           </section>
+          <PropertyImages images={property.images} />
         </>
       )}
     </>

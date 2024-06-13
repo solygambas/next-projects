@@ -201,6 +201,9 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - ensuring that certain routes are accessible only to authenticated users.
 - handling the property submission form.
 - implementing Cloudinary for image storage and optimization.
+- presenting user profile information and listings.
+- offering capabilities for editing and deleting listings.
+- integrating React Toastify for displaying user-friendly notifications.
 
 ## Acknowledgments
 

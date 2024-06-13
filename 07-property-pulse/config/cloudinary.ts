@@ -6,4 +6,13 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+export const getCloudinaryPublicId = (url: string) => {
+  const parts = url.split("/");
+  const publicIdWithExtension = parts
+    .slice(parts.indexOf("propertypulse"))
+    .join("/");
+  const [publicId] = publicIdWithExtension.split(".");
+  return publicId;
+};
+
 export default cloudinary;

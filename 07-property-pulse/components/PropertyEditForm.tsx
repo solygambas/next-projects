@@ -93,7 +93,26 @@ const PropertyEditForm = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {};
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.currentTarget);
+      const response = await fetch(`/api/properties/${id}`, {
+        method: "PUT",
+        body: formData,
+      });
+      if (response.status === 200) {
+        router.push(`/properties/${id}`);
+      } else if (response.status === 401 || response.status === 403) {
+        toast.error("Permission denied");
+      } else {
+        toast.error("Failed to update property");
+      }
+    } catch (error) {
+      console.error("Error updating property", error);
+      toast.error("Failed to update property");
+    }
+  };
 
   return (
     mounted &&

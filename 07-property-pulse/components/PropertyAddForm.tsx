@@ -5,27 +5,27 @@ import { PropertyFormInterface } from "@/models/Property";
 const PropertyAddForm = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const [fields, setFields] = useState<PropertyFormInterface>({
-    type: "Apartment",
-    name: "Test property",
+    type: "",
+    name: "",
     description: "",
     location: {
       street: "",
-      city: "Test city",
-      state: "Test state",
+      city: "",
+      state: "",
       zipcode: "",
     },
-    beds: 3,
-    baths: 2,
-    square_feet: 1800,
-    amenities: ["Free Parking"],
+    beds: 0,
+    baths: 0,
+    square_feet: 0,
+    amenities: [],
     rates: {
       weekly: 0,
-      monthly: 2000,
+      monthly: 0,
       nightly: 0,
     },
     seller_info: {
       name: "",
-      email: "test@test.com",
+      email: "",
       phone: "",
     },
     images: [],
@@ -440,7 +440,7 @@ const PropertyAddForm = () => {
 
         <div className="mb-4 bg-blue-50 p-4">
           <label className="block text-gray-700 font-bold mb-2">
-            Rates (Leave blank if not applicable)
+            Rates (Leave zero if not applicable)
           </label>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <div className="flex items-center">

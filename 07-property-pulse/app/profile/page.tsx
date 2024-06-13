@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Spinner from "@/components/Spinner";
 import { PropertyInterface } from "@/models/Property";
 
@@ -53,12 +54,12 @@ const ProfilePage = () => {
           (property) => property._id !== propertyId
         );
         setProperties(updatedProperties);
-        alert("Property deleted successfully");
+        toast.success("Property deleted successfully");
       } else {
-        alert("An error occurred, please try again");
+        toast.error("An error occurred, please try again");
       }
     } catch (error) {
-      alert("An error occurred, please try again");
+      toast.error("An error occurred, please try again");
       console.error("Error deleting property", error);
     }
   };

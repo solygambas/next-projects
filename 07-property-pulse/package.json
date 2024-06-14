@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "cloudinary": "^2.2.0",
+    "mapbox-gl": "^3.4.0",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
@@ -28,6 +29,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-map-gl": "^7.1.7",
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.5"
   },

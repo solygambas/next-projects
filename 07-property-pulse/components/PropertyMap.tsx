@@ -27,31 +27,51 @@ const PropertyMap = ({ property }: { property: PropertyInterface }) => {
     height: "500px",
   });
   const [loading, setLoading] = useState<boolean>(true);
+  const [geocodeError, setGeocodeError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchCoords = async () => {
-      const { street, city, state, zipcode } = property.location;
-      const address = `${street} ${city} ${state} ${zipcode}`;
-      const encodedAddress = encodeURIComponent(address);
-      const response = await fetch(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
-      );
-      const data = await response.json();
-      const [lng, lat] = data.features[0].center;
-      setLng(lng);
-      setLat(lat);
-      setViewport({
-        ...viewport,
-        latitude: lat,
-        longitude: lng,
-      });
-      setLoading(false);
+      try {
+        const { street, city, state, zipcode } = property.location;
+        const address = `${street} ${city} ${state} ${zipcode}`;
+        const encodedAddress = encodeURIComponent(address);
+        const response = await fetch(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
+        );
+        const data = await response.json();
+        if (data.features.length === 0) {
+          setGeocodeError(true);
+          setLoading(false);
+          return;
+        }
+        const [lng, lat] = data.features[0].center;
+        setLng(lng);
+        setLat(lat);
+        setViewport({
+          ...viewport,
+          latitude: lat,
+          longitude: lng,
+        });
+      } catch (error) {
+        console.log(error);
+        setGeocodeError(true);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchCoords();
   }, []);
 
   if (loading) {
     return <Spinner loading={loading} />;
+  }
+
+  if (geocodeError) {
+    return (
+      <div>
+        <p className="text-xl">No location data found</p>
+      </div>
+    );
   }
 
   return (

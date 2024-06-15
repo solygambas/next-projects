@@ -204,6 +204,9 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - presenting user profile information and listings.
 - offering capabilities for editing and deleting listings.
 - integrating React Toastify for displaying user-friendly notifications.
+- integrating Mapbox to handle geocoding and maps.
+- implementing a bookmarking system that enables users to save their favorite properties.
+- adding social share buttons using react-share.
 
 ## Acknowledgments
 

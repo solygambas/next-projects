@@ -1,16 +1,36 @@
-import { ObjectId, Schema, model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
+import { ObjectId as BSONObjectId } from "bson";
 
-interface MessageInterface {
-  sender: ObjectId;
-  recipient: ObjectId;
-  property: ObjectId;
+export interface BaseMessageAPIInterface {
+  recipient: string;
+  property: string;
   name: string;
   email: string;
   phone?: string;
   body: string;
+}
+
+export interface MessageAPIInterface extends BaseMessageAPIInterface {
+  sender: string;
   read: boolean;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface BaseMessageInterface {
+  recipient: BSONObjectId;
+  property: BSONObjectId;
+  name: string;
+  email: string;
+  phone?: string;
+  body: string;
+}
+
+export interface MessageInterface extends BaseMessageInterface {
+  sender: BSONObjectId;
+  read: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const MessageSchema = new Schema<MessageInterface>(
@@ -52,7 +72,6 @@ const MessageSchema = new Schema<MessageInterface>(
 );
 
 const Message =
-  models.Message<MessageInterface> ||
-  model<MessageInterface>("Message", MessageSchema);
+  models.Message || model<MessageInterface>("Message", MessageSchema);
 
 export default Message;

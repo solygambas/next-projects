@@ -10,13 +10,6 @@ export interface BaseMessageAPIInterface {
   body: string;
 }
 
-export interface MessageAPIInterface extends BaseMessageAPIInterface {
-  sender: string;
-  read: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface BaseMessageInterface {
   recipient: BSONObjectId;
   property: BSONObjectId;

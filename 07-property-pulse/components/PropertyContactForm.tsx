@@ -1,10 +1,14 @@
 "use client";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { useSession } from "next-auth/react";
 import { PropertyInterface } from "@/models/Property";
 import { BaseMessageAPIInterface } from "@/models/Message";
 
 const PropertyContactForm = ({ property }: { property: PropertyInterface }) => {
+  const { data: session } = useSession();
+
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -21,13 +25,41 @@ const PropertyContactForm = ({ property }: { property: PropertyInterface }) => {
       recipient: property.owner.toString(),
       property: property._id,
     };
-    setWasSubmitted(true);
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status === 200) {
+        toast.success("Message sent successfully");
+        setWasSubmitted(true);
+      } else if (res.status === 400) {
+        toast.error("Cannot send message to yourself");
+      } else if (res.status === 401) {
+        toast.error("You must be logged in to send a message");
+      } else {
+        toast.error("An error occurred");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred");
+    } finally {
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    }
   };
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h3 className="text-xl font-bold mb-6">Contact Property Manager</h3>
-      {wasSubmitted ? (
+      {!session ? (
+        <p>You must be logged in to send a message</p>
+      ) : wasSubmitted ? (
         <p className="text-green-500 mb-4">
           Your message has been sent successfully
         </p>

@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useGlobalContext } from "@/context/GlobalContext";
+import { useEffect } from "react";
 
 const UnreadMessageCount = () => {
-  const [unreadCount, setUnreadCount] = useState<number>(0);
+  const { unreadCount, setUnreadCount } = useGlobalContext();
 
   useEffect(() => {
     const fetchUnreadCount = async () => {

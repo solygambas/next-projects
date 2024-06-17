@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { PopulatedMessageInterface } from "@/models/Message";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const Message = ({ message }: { message: PopulatedMessageInterface }) => {
   const { body, email, phone, sender, property, createdAt } = message;
 
+  const { setUnreadCount } = useGlobalContext();
   const [isRead, setIsRead] = useState<boolean>(message.read);
   const [isDeleted, setIsDeleted] = useState<boolean>(false);
 
@@ -18,8 +20,10 @@ const Message = ({ message }: { message: PopulatedMessageInterface }) => {
         setIsRead((prev) => !prev);
         const { read } = await response.json();
         if (read) {
+          setUnreadCount((prev) => prev - 1);
           toast.success("Message marked as read");
         } else {
+          setUnreadCount((prev) => prev + 1);
           toast.success("Message marked as new");
         }
       } else {
@@ -38,6 +42,9 @@ const Message = ({ message }: { message: PopulatedMessageInterface }) => {
       });
       if (response.status === 200) {
         toast.success("Message deleted");
+        if (!isRead) {
+          setUnreadCount((prev) => prev - 1);
+        }
         setIsDeleted(true);
       } else {
         toast.error("An error occurred");

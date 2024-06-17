@@ -19,8 +19,8 @@ export const GET = async (req: Request, res: Response) => {
     const messages: MessageInterface[] = await Message.find({
       recipient: userId,
     })
-      .populate("sender", "name")
-      .populate("property", "title");
+      .populate("sender", "username")
+      .populate("property", "name");
     return new Response(JSON.stringify(messages), { status: 200 });
   } catch (error) {
     console.log(error);

@@ -1,30 +1,40 @@
 import { Schema, model, models } from "mongoose";
 import { ObjectId as BSONObjectId } from "bson";
 
-export interface BaseMessageAPIInterface {
-  recipient: string;
-  property: string;
+interface BaseMessageInterface {
   name: string;
   email: string;
   phone?: string;
   body: string;
 }
 
-export interface BaseMessageInterface {
-  recipient: BSONObjectId;
-  property: BSONObjectId;
-  name: string;
-  email: string;
-  phone?: string;
-  body: string;
+export interface BaseMessageAPIInterface extends BaseMessageInterface {
+  recipient: string;
+  property: string;
 }
 
 export interface MessageInterface extends BaseMessageInterface {
   _id: string;
+  recipient: BSONObjectId;
+  property: BSONObjectId;
   sender: BSONObjectId;
   read: boolean;
   createdAt: Date;
   updatedAt: Date;
+}
+
+export interface PopulatedSender {
+  username: string;
+}
+
+export interface PopulatedProperty {
+  name: string;
+}
+
+export interface PopulatedMessageInterface
+  extends Omit<MessageInterface, "sender" | "property"> {
+  sender: PopulatedSender;
+  property: PopulatedProperty;
 }
 
 const MessageSchema = new Schema<MessageInterface>(

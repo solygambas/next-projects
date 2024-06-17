@@ -7,6 +7,7 @@ const Message = ({ message }: { message: PopulatedMessageInterface }) => {
   const { body, email, phone, sender, property, createdAt } = message;
 
   const [isRead, setIsRead] = useState<boolean>(message.read);
+  const [isDeleted, setIsDeleted] = useState<boolean>(false);
 
   const handleReadClick = async () => {
     try {
@@ -30,7 +31,26 @@ const Message = ({ message }: { message: PopulatedMessageInterface }) => {
     }
   };
 
-  const handleDeleteClick = async () => {};
+  const handleDeleteClick = async () => {
+    try {
+      const response = await fetch(`/api/messages/${message._id}`, {
+        method: "DELETE",
+      });
+      if (response.status === 200) {
+        toast.success("Message deleted");
+        setIsDeleted(true);
+      } else {
+        toast.error("An error occurred");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred");
+    }
+  };
+
+  if (isDeleted) {
+    return null;
+  }
 
   return (
     <div className="relative bg-white p-4 rounded-md shadow-md border border-gray-200">

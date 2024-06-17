@@ -16,11 +16,23 @@ export const GET = async (req: Request, res: Response) => {
       return new Response("Unauthorized", { status: 401 });
     }
     const { userId } = sessionUser;
-    const messages: MessageInterface[] = await Message.find({
+    const readMessages: MessageInterface[] = await Message.find({
       recipient: userId,
+      read: true,
     })
+      .sort({ createdAt: -1 })
       .populate("sender", "username")
       .populate("property", "name");
+
+    const unreadMessages: MessageInterface[] = await Message.find({
+      recipient: userId,
+      read: false,
+    })
+      .sort({ createdAt: -1 })
+      .populate("sender", "username")
+      .populate("property", "name");
+
+    const messages = [...unreadMessages, ...readMessages];
     return new Response(JSON.stringify(messages), { status: 200 });
   } catch (error) {
     console.log(error);

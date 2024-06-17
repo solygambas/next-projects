@@ -20,6 +20,7 @@ export interface BaseMessageInterface {
 }
 
 export interface MessageInterface extends BaseMessageInterface {
+  _id: string;
   sender: BSONObjectId;
   read: boolean;
   createdAt: Date;

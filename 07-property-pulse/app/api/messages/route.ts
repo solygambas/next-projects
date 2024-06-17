@@ -1,8 +1,32 @@
 import connectDB from "@/config/database";
-import Message, { BaseMessageAPIInterface } from "@/models/Message";
+import Message, {
+  BaseMessageAPIInterface,
+  MessageInterface,
+} from "@/models/Message";
 import { getSessionUser } from "@/utils/getSessionUser";
 
 export const dynamic = "force-dynamic";
+
+// GET /api/messages
+export const GET = async (req: Request, res: Response) => {
+  try {
+    await connectDB();
+    const sessionUser = await getSessionUser();
+    if (!sessionUser || !sessionUser.user) {
+      return new Response("Unauthorized", { status: 401 });
+    }
+    const { userId } = sessionUser;
+    const messages: MessageInterface[] = await Message.find({
+      recipient: userId,
+    })
+      .populate("sender", "name")
+      .populate("property", "title");
+    return new Response(JSON.stringify(messages), { status: 200 });
+  } catch (error) {
+    console.log(error);
+    return new Response("An error occurred", { status: 500 });
+  }
+};
 
 // POST /api/messages
 export const POST = async (req: Request, res: Response) => {

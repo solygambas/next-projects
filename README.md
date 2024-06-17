@@ -208,6 +208,7 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - implementing a bookmarking system that enables users to save their favorite properties.
 - adding social share buttons using react-share.
 - handling searches by location and property type.
+- implementing a messaging system that allows users to send, view, and manage messages, featuring message notifications.
 
 ## Acknowledgments
 

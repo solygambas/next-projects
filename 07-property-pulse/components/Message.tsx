@@ -1,11 +1,46 @@
+"use client";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import { PopulatedMessageInterface } from "@/models/Message";
 
 const Message = ({ message }: { message: PopulatedMessageInterface }) => {
   const { body, email, phone, sender, property, createdAt } = message;
+
+  const [isRead, setIsRead] = useState<boolean>(message.read);
+
+  const handleReadClick = async () => {
+    try {
+      const response = await fetch(`/api/messages/${message._id}`, {
+        method: "PUT",
+      });
+      if (response.status === 200) {
+        setIsRead((prev) => !prev);
+        const { read } = await response.json();
+        if (read) {
+          toast.success("Message marked as read");
+        } else {
+          toast.success("Message marked as new");
+        }
+      } else {
+        toast.error("An error occurred");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred");
+    }
+  };
+
+  const handleDeleteClick = async () => {};
+
   return (
     <div className="relative bg-white p-4 rounded-md shadow-md border border-gray-200">
+      {!isRead && (
+        <div className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-md">
+          New
+        </div>
+      )}
       <h2 className="text-xl mb-4">
-        <span className="font-bold">Property Inquiry:</span>
+        <span className="font-bold">Property Inquiry:</span>{" "}
         {property?.name || "No Property Name"}
       </h2>
       <p className="text-gray-700">{body || "No message body"}</p>
@@ -33,10 +68,18 @@ const Message = ({ message }: { message: PopulatedMessageInterface }) => {
           <strong>Received:</strong> {new Date(createdAt).toLocaleString()}
         </li>
       </ul>
-      <button className="mt-4 mr-3 bg-blue-500 text-white py-1 px-3 rounded-md">
-        Mark As Read
+      <button
+        onClick={handleReadClick}
+        className={`mt-4 mr-3 ${
+          isRead ? "bg-gray-300" : "bg-blue-500 text-white"
+        } py-1 px-3 rounded-md`}
+      >
+        {isRead ? "Mark As New" : "Mark As Read"}
       </button>
-      <button className="mt-4 bg-red-500 text-white py-1 px-3 rounded-md">
+      <button
+        onClick={handleDeleteClick}
+        className="mt-4 bg-red-500 text-white py-1 px-3 rounded-md"
+      >
         Delete
       </button>
     </div>

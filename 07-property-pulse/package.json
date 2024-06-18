@@ -30,6 +30,7 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-map-gl": "^7.1.7",
+    "react-photoswipe-gallery": "^3.0.1",
     "react-share": "^5.1.0",
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.5"

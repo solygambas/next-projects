@@ -16,7 +16,7 @@ export const GET = async (req: NextRequest, res: Response) => {
     const page =
       parseInt(req.nextUrl.searchParams.get("page") as string, 10) || 1;
     const pageSize =
-      parseInt(req.nextUrl.searchParams.get("pageSize") as string, 10) || 10;
+      parseInt(req.nextUrl.searchParams.get("pageSize") as string, 10) || 6;
     const skip = (page - 1) * pageSize;
     const total = await Property.countDocuments({});
 

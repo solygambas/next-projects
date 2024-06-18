@@ -2,6 +2,8 @@
 
 A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 
+[See Demo deployed on Vercel](https://property-pulse-gamma.vercel.app/)
+
 <p align="center">
     <img src="screenshot.png">
 </p>
@@ -30,5 +32,8 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - adding social share buttons using react-share.
 - handling searches by location and property type.
 - implementing a messaging system that allows users to send, view, and manage messages, featuring message notifications.
+- managing pagination.
+- displaying images in a lightbox with react-photoswipe-gallery.
+- displaying featured properties.
 
 Based on [Next.js From Scratch](https://www.udemy.com/course/nextjs-from-scratch/) by Brad Traversy (2024).

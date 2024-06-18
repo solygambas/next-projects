@@ -177,6 +177,8 @@ Another blog using Tailwind CSS and Markdown.
 
 A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 
+[See Demo deployed on Vercel](https://property-pulse-gamma.vercel.app/)
+
 [See 07-property-pulse folder](07-property-pulse)
 
 <p align="center">
@@ -209,6 +211,9 @@ A property rental website using Tailwind CSS, MongoDB, and TypeScript.
 - adding social share buttons using react-share.
 - handling searches by location and property type.
 - implementing a messaging system that allows users to send, view, and manage messages, featuring message notifications.
+- managing pagination.
+- displaying images in a lightbox with react-photoswipe-gallery.
+- displaying featured properties.
 
 ## Acknowledgments
 

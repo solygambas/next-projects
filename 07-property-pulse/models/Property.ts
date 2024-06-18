@@ -9,9 +9,9 @@ type Location = {
 };
 
 type Rates = {
-  nightly?: number;
-  weekly?: number;
-  monthly?: number;
+  nightly: number;
+  weekly: number;
+  monthly: number;
 };
 
 type SellerInfo = {

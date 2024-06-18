@@ -1,11 +1,11 @@
 import Link from "next/link";
 import PropertyCard from "@/components/PropertyCard";
 import { fetchProperties } from "@/utils/requests";
-import { PropertyInterface } from "@/models/Property";
+import { PaginatedProperties } from "@/models/Property";
 
 const HomeProperties = async () => {
-  const properties: PropertyInterface[] = await fetchProperties();
-  const recentProperties = properties
+  const data: PaginatedProperties = await fetchProperties();
+  const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
   return (

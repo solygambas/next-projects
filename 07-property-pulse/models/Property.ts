@@ -49,6 +49,11 @@ export interface PropertyInterface extends PropertyAPIInterface {
   updatedAt: string;
 }
 
+export interface PaginatedProperties {
+  properties: PropertyInterface[];
+  total: number;
+}
+
 const PropertySchema = new Schema<PropertyAPIInterface>(
   {
     owner: {

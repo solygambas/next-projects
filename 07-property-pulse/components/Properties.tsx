@@ -2,21 +2,27 @@
 import { useState, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 import Spinner from "./Spinner";
-import { PropertyInterface } from "@/models/Property";
+import { PropertyInterface, PaginatedProperties } from "@/models/Property";
 
 const Properties = () => {
   const [properties, setProperties] = useState<PropertyInterface[]>([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(3);
+  const [totalItems, setTotalItems] = useState<number>(0);
 
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch("/api/properties");
+        const res = await fetch(
+          `/api/properties?page=${page}&pageSize=${pageSize}`
+        );
         if (!res.ok) {
           throw new Error("Failed to fetch properties");
         }
-        const data: PropertyInterface[] = await res.json();
-        setProperties(data);
+        const data: PaginatedProperties = await res.json();
+        setProperties(data.properties);
+        setTotalItems(data.total);
       } catch (error) {
         console.error(error);
       } finally {

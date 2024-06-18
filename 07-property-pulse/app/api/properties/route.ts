@@ -1,18 +1,34 @@
 import connectDB from "@/config/database";
 import cloudinary from "@/config/cloudinary";
+import { NextRequest } from "next/server";
 import { ObjectId } from "bson";
 import Property, {
+  PaginatedProperties,
   PropertyAPIInterface,
   PropertyInterface,
 } from "@/models/Property";
 import { getSessionUser } from "@/utils/getSessionUser";
 
 // GET /api/properties
-export const GET = async (req: Request, res: Response) => {
+export const GET = async (req: NextRequest, res: Response) => {
   try {
     await connectDB();
-    const properties: PropertyInterface[] = await Property.find({});
-    return new Response(JSON.stringify(properties), {
+    const page =
+      parseInt(req.nextUrl.searchParams.get("page") as string, 10) || 1;
+    const pageSize =
+      parseInt(req.nextUrl.searchParams.get("pageSize") as string, 10) || 10;
+    const skip = (page - 1) * pageSize;
+    const total = await Property.countDocuments({});
+
+    const properties: PropertyInterface[] = await Property.find({})
+      .skip(skip)
+      .limit(pageSize);
+    const result: PaginatedProperties = {
+      total,
+      properties,
+    };
+
+    return new Response(JSON.stringify(result), {
       status: 200,
     });
   } catch (error) {

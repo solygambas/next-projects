@@ -8,12 +8,13 @@ An admin dashboard UI using Next.js, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Features
 
-- setting up the project.
+- setting up the project environment.
 - creating a navbar and sidebar.
 - displaying dashboard cards, posts table, and metrics with Recharts.
-- displaying posts on a dedicated page.
-- creating an edit form leveraging React Hook Form and Zod.
+- showcasing posts on a dedicated page.
+- crafting an edit form using React Hook Form and Zod.
 - generating user-friendly toast notifications.
-- enabling dark mode with next-themes.
+- enabling dark mode functionality with next-themes.
+- presenting login and registration forms.
 
 Based on [Admin Dashboard From Scratch - Next.js, TypeScript, Shadcn/ui](https://www.youtube.com/watch?v=hhudoSMM0yU) by Brad Traversy - Traversy Media (2024).

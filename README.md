@@ -16,6 +16,10 @@
 
 Check out our [**collection of articles**](https://www.onbusinessplan.com/) for those beginning their web development journey. Find tips, tricks, and motivational content to keep you engaged and motivated throughout your learning process.
 
+## Share Your Insights
+
+We want to hear from you! Help us tailor our content to better meet your needs by participating in our brief survey. Your feedback is invaluable in guiding us to create the most relevant and useful resources for developers and freelancers. [**Take the survey here**](https://forms.gle/sSWJ4uAcTdFJu6W76).
+
 ## <a name="nextevents"></a> 1) NextEvents
 
 A social networking site using Next.js, MongoDB and Firebase.

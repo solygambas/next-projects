@@ -121,7 +121,7 @@ A music event website using Strapi CMS as backend.
 
 [See Demo deployed on Vercel](https://next-djevents-strapi.vercel.app/)
 
-[See Strapi API deployed on Railway](https://next-projects-production.up.railway.app/events)
+[See Strapi API deployed on Render](https://djevents-backend.onrender.com/events)
 
 [See 05-djevents folder](05-djevents)
 
@@ -148,7 +148,7 @@ A music event website using Strapi CMS as backend.
 - creating a user dashboard and associating events with users.
 - guarding routes to add, edit, delete event and upload image.
 - displaying maps with MapQuest Geocoding API, Mapbox and ReactMapGL.
-- deploying Strapi backend on Railway.
+- deploying Strapi backend on Render.
 - deploying frontend on Vercel.
 
 ## <a name="devspace"></a> 6) DevSpace

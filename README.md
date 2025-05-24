@@ -48,7 +48,7 @@ A social networking site using Next.js, MongoDB and Firebase.
 
 ## <a name="blog"></a> 2) Blog
 
-A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter.
+A complete app example with a blog using Next.js, MongoDB, Markdown and React Syntax Highlighter that works on all the environment.
 
 [See Demo deployed on Vercel](https://next-dagny.vercel.app/)
 
